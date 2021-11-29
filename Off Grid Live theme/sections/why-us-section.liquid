@@ -1,0 +1,137 @@
+<div class="why-us-sec">
+  <div class="container">
+      <div class="why-top-ctn">
+          <span>{{ section.settings.sub_heading  }} </span>
+          <h2>{{ section.settings.heading }}</h2>
+          <p>{{ section.settings.description }} </p>
+      </div>
+      <div class="row">
+          <div class="col-md-4">
+              <ul class="why-us-items right-algin">
+                  <li>
+                    <img src="{{ 'price-match.svg' | asset_url }}"/>
+                      <h3>Price Match</h3>
+                      <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod</p>
+                  </li>
+                  <li>
+                    <img src="{{ 'experience.svg' | asset_url }}"/>
+                      <h3>15yrs of Experience</h3>
+                      <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod</p>
+                  </li>
+                  <li>
+                    <img src="{{ 'support.svg' | asset_url }}"/>
+                      <h3>Amazing Support</h3>
+                      <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod</p>
+                  </li>
+              </ul>
+          </div>
+
+          <div class="col-md-4 why-img">
+              <img src="{{ 'why-img.png' | asset_url }}"/>
+          </div>
+
+          <div class="col-md-4">
+              <ul class="why-us-items left-algin">
+                  <li>
+                    <img src="{{ 'shipping.svg' | asset_url }}"/>
+                      <h3>Quick Shipping</h3>
+                      <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod</p>
+                  </li>
+                  <li>
+                    <img src="{{ 'quality.svg' | asset_url }}"/>
+                      <h3>Quality First</h3>
+                      <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod</p>
+                  </li>
+                  <li>
+                    <img src="{{ 'staff.svg' | asset_url }}"/>
+                      <h3>Friendly Staff</h3>
+                      <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod</p>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "Why Us Section",
+    "settings": [
+		{
+			"type": "text",
+			"id": "sub_heading",
+			"label": "Grid Shop Subheading"
+		},
+		{
+			"type": "text",
+			"id": "heading",
+			"label": "Grid Shop heading"
+		},
+		{
+			"type": "textarea",
+			"id": "description",
+			"label": "Grid Shop Description"
+		}
+	],
+	"blocks": [
+            {
+              "type": "second-section-right",
+              "name": "Second Section",
+              "settings": [
+                {
+                  "id": "icons_right1",
+                  "type": "image_picker",
+                  "label": "Icons Right"
+                },
+				{
+                  "id": "icon_text1",
+                  "type": "text",
+                  "label": "Icons Right Text"
+                },
+				{
+                  "id": "icon_desc",
+                  "type": "textarea",
+                  "label": "Icons Description"
+                }
+              ]
+            },
+            {
+              "type": "third-section",
+              "name": "Third Section",
+              "settings": [
+                  {
+                  "id": "why_us_image",
+                  "type": "image_picker",
+                  "label": "Why Us Image"
+                }
+              ]
+            },
+            {
+              "type": "fourth-section-left",
+              "name": "Fourth Section",
+              "settings": [
+                {
+                  "id": "icons_left",
+                  "type": "image_picker",
+                  "label": "Icons left"
+                },
+				{
+                  "id": "icon_text2",
+                  "type": "text",
+                  "label": "Icons Left Text"
+                },
+				{
+                  "id": "icon_desc2",
+                  "type": "textarea",
+                  "label": "Icons Left Description"
+                }
+              ]
+            }
+		]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

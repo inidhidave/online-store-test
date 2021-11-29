@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="price-match-content">
+        <h2>{{ section.settings.heading }}</h2>
+		<ul> 
+           {% for block in section.blocks %}
+         <li>
+           {{ block.settings.list_text }}  
+          </li> 
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Shipping Section",
+    "settings": [
+		{
+			"type": "text",
+			"id": "heading",
+			"label": "Shipping Heading"
+		}
+	],
+	"blocks": [
+		{
+			"type": "block",
+			"name": "List Block",
+			"settings": [
+				{
+					"type": "text",
+					"id": "list_text",
+					"label": "List text"
+				}
+				
+			]
+		}
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
+
+

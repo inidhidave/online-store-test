@@ -1,0 +1,102 @@
+<section class="clearfix">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        
+        <div class="is-off-content">
+          <h6>{{ section.settings.sub_title }}</h6>
+          <h2>{{ section.settings.title1 }}</h2>
+          <p>{{ section.settings.description }}</p>
+          
+          <ul class="is-off-content-services-block mrg-left">
+            {% for block in section.blocks limit:2 %}
+            <li>
+            <img src="{{ block.settings.ser_icon | img_url: 'master' }}"/>
+              <div class="is-off-content-services">
+                <h3>{{ block.settings.service_title  }}</h3>
+                <span>{{ block.settings.service_desc }}</span>
+              </div>
+            </li>
+            {% endfor %}
+          </ul>
+          
+           <ul class="is-off-content-services-block">
+             {% for block in section.blocks offset:2 %}
+            <li>
+            <img src="{{ block.settings.ser_icon | img_url: 'master' }}"/>
+              <div class="is-off-content-services">
+                <h3>{{ block.settings.service_title  }}</h3>
+                <span>{{ block.settings.service_desc }}</span>
+              </div>
+            </li>
+             {% endfor %}
+          </ul>
+        </div>
+      
+      </div>
+      <div class="col-md-6">
+      <img src="{{ section.settings.whos_image | img_url: 'master' }}"/>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+
+{% schema %}
+  {
+    "name": "Grid for you Section",
+    "settings": [
+		{
+			"type": "text",
+			"id": "sub_title",
+			"label": "Sub Heading"
+		},
+		{
+			"type": "text",
+			"id": "title1",
+			"label": "Heading"
+		},
+		{
+			"type": "textarea",
+			"id": "description",
+			"label": "Description"
+		},
+		{
+			"type": "image_picker",
+			"id": "whos_image",
+			"label": "Whos Off Grid Image"
+		}
+	],
+	"blocks": [
+		{
+			"type": "block",
+			"name": "Icon Block",
+			"settings": [
+				{
+					"type": "image_picker",
+					"id": "ser_icon",
+					"label": "Service Icon"
+				},
+				{
+					"type": "text",
+					"id": "service_title",
+					"label": "Service Title"
+				},
+				{
+					"type": "textarea",
+					"id": "service_desc",
+					"label": "Service Description"
+				}
+			]
+		}
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

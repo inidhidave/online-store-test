@@ -1,0 +1,37 @@
+<div class="search-class">
+  <h3 class="h3">Search</h3>
+  <form action="/search" method="get" class="search-header search" role="search">
+  <input type="hidden" name="type" value="product">
+  <input class="search-header__input search__input"
+    type="search"
+    name="q"
+    aria-label="{{ 'general.search.placeholder' | t }}">
+  <button class="search-header__submit search__submit btn--link" type="submit">
+    {% include 'icon-search' %}
+    <span class="icon__fallback-text">{{ 'general.search.submit' | t }}</span>
+  </button>
+ </form>
+</div>
+<div id="sidebar-tags">
+	{% comment %}
+      Blog tags
+    {% endcomment %}
+    {% if blog.all_tags.size > 0 %}
+      <h3 class="h3">Categories</h3>
+      <ul class="blog-listing">
+        {% for tag in blog.all_tags %}
+        	{% unless section.settings.blog_category contains tag %}
+        	  		{% assign tag = tag |downcase %}
+                  {% unless tag contains 'january' or tag contains 'february' or tag contains 'march' or tag contains 'april'  or tag contains 'may'  or tag contains 'june'  or tag contains 'july'  or tag contains 'august'  or tag contains 'september'  or tag contains 'october'  or tag contains 'november'  or tag contains 'december' %}
+                    {% if current_tags contains tag %}
+                    <li>{{ tag }}</li>
+                    {% else %}
+                    <li>{{ tag | link_to_tag: tag }}</li>
+                    {% endif %}
+                  {% endunless %}
+        		
+        	{% endunless %}
+        {% endfor %}
+      </ul>
+    {% endif %}
+</div>

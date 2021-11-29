@@ -1,0 +1,8 @@
+{% if shop.metafields.custom_fields["what_you_need_menu"] != blank %}
+  <div class="custom-field custom-field__what-you-need-menu custom-field__type--html">
+    <h3 class="custom-field--title">What you need menu</h3>
+    <div class="custom-field--value">
+      {{ shop.metafields.custom_fields["what_you_need_menu"] }}
+    </div>
+  </div>
+{% endif %}

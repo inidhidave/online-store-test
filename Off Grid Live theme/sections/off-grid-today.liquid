@@ -1,0 +1,60 @@
+<section class="clearfix off-grid-today-block">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="off-grid-today-block-left">
+      <img src="{{ section.settings.go_off_image | img_url: 'master' }}"/>
+      </div>
+    </div>
+     <div class="col-md-9">
+       <div class="off-grid-today-block-right">
+       <div class="off-grid-today-content float-left">
+         <p>{{ section.settings.go_off_heading }}</p>
+         <h3>{{ section.settings.go_off_subheading }}</h3>
+       </div>
+       <div class=" offset-md-8">
+        <a class="secondary-btn" href="{{ section.settings.btn_link }}">{{ section.settings.btn_text }}</a>
+       </div>
+    </div>
+    </div>
+  </div>
+
+</section>
+
+{% schema %}
+  {
+    "name": "Go Off Grid Section",
+    "settings": [
+		{
+          "type": "image_picker",
+          "id": "go_off_image",
+          "label": "Go Off Grid Image"
+        },
+        {
+          "type": "text",
+          "id": "go_off_heading",
+          "label": "Go Off Heading"
+        },
+		{
+		 "type": "text",
+          "id": "go_off_subheading",
+          "label": "Go Off  Subheading"
+        },
+		{
+      	   "id": "btn_link",
+           "type": "url",
+          "label": "Button URL"
+    	},
+    	{
+          "id": "btn_text",
+          "type": "text",
+          "label": "Button text"
+    	}
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

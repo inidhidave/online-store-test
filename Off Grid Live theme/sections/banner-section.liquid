@@ -1,0 +1,99 @@
+<div class="banner-section">    
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12 ">
+      <div class="home-slick-slider">
+        {% for block in section.blocks %}
+        <div class="single-item">
+          
+          <div style="background-image:url({{ block.settings.banner_image | img_url: 'master' }});"> 
+            <div class="banner-content">
+              
+              <h1>{{ block.settings.banner_title }}</h1>
+              <p>{{ block.settings.banner_dec }}</p>
+              <a href="{{ block.settings.btn_link }}" class="primary-btn">{{ block.settings.btn_text  }} </a>
+            </div>
+<!--             <img src="{{ block.settings.banner_image | img_url: 'master' }}"/> -->
+          </div>
+                  
+        </div>
+        {% endfor %}
+      </div>
+      <a href="javascript:;" id="scroll-down-btn">
+        <img src="{{ '78-icon.svg' | asset_url }}" width="35" />
+      </a>
+    </div>
+   </div>
+  </div>
+  </div> 
+
+<script>
+	$("#scroll-down-btn").on('click', function() {
+    $('html, body').animate({
+        scrollTop: $("#featured-section").offset().top
+    }, 1000);
+});
+
+</script>
+
+<style>
+  .banner-section{height:100vh;}
+  .home-slick-slider{position:relative;}
+  #scroll-down-btn{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    /* right: 50%; */
+    margin: 0 auto;
+    /* display: inline-block; */
+    transform: translateX(-50%);
+  }
+</style>
+
+{% schema %}
+{
+ "name": "Banner Section",
+ "settings": [],
+
+"blocks": [
+	 {
+	   "type": "banner",
+	   "name": "Banner Image",
+	   "settings": [
+	   {
+		 "type": "image_picker",
+		 "id": "banner_image",
+		 "label": "Banner logo"
+	    },
+		{
+		 "type": "html",
+		 "id": "banner_dec",
+		 "label": "Banner Description"
+	    },
+		{
+		 "type": "text",
+		 "id": "banner_title",
+		 "label": "Banner Title"
+	    },
+		{
+      	  "id": "btn_link",
+          "type": "url",
+          "label": "Button URL"
+          },
+          {
+            "id": "btn_text",
+            "type": "text",
+            "label": "Button text"
+          }
+	  ]
+ 	}
+  ],
+	"presets": [
+		{
+			"name": "Banner Section",
+			"category": "banner"
+		}
+	]
+}
+
+{% endschema %}

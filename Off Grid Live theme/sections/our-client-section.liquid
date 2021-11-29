@@ -1,0 +1,39 @@
+<section class="clearfix our-clients space-100">
+<div class="container">
+    <div class="row">
+      <ul>
+        {% for block in section.blocks %}
+        <li>
+          <img src="{{ block.settings.client_loogo | img_url: 'master' }}"/>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    </div>
+</section> 
+
+{% schema %}
+{
+	"name": "Our Client Section",
+	"settings": [],
+	"blocks": [
+	 {
+	   "type": "logo",
+	   "name": "Client logo",
+	   "settings": [
+	   {
+		 "type": "image_picker",
+		 "id": "client_loogo",
+		 "label": "Client logo"
+	    }
+	]
+ }
+	],
+	"presets": [
+		{
+			"name": "Our Client Section",
+			"category": "client"
+		}
+	]
+}
+{% endschema %}

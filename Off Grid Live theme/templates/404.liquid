@@ -1,0 +1,10 @@
+<div class="page-width">
+  <div class="empty-page-content text-center">
+    <img src="{{ '404-img.png' | asset_url }}"/>
+    
+    <p>{{ 'general.404.subtext' | t }}</p>
+    <p>
+      <a href="{{ routes.root_url }}" class="btn btn--has-icon-after">{{ 'general.404.link' | t }}{% include 'icon-arrow-right' %}</a>
+    </p>
+  </div>
+</div>

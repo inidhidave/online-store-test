@@ -1,0 +1,235 @@
+{% comment %}
+    Renders a list of menu items
+    Accepts:
+    - linklist: {Object} Linklist Liquid object (required)
+    - wrapper_class: {String} CSS wrapper class for the navigation (optional)
+
+    Usage:
+    {% include 'site-nav', linklist: section.settings.main_linklist, wrapper_class: 'site-nav--centered' %}
+{% endcomment %}
+
+{%comment%}
+<ul class="site-nav list--inline{% if wrapper_class != blank %} {{ wrapper_class }}{% endif %}" id="SiteNav">
+  {% for link in linklists[linklist].links %}
+    {%- assign child_list_handle = link.title | handleize -%}
+
+    {% comment %}
+      Check if third-level nav exists on each parent link.
+    {% endcomment %}
+    {%- assign three_level_nav = false -%}
+    {% if link.links != blank %}
+      {% if link.levels == 2 %}
+        {%- assign three_level_nav = true -%}
+      {% endif %}
+    {% endif %}
+
+    {% if link.links != blank %}
+      <li class="site-nav--has-dropdown{% if three_level_nav %} site-nav--has-centered-dropdown{% endif %}{% if link.active %} site-nav--active{% endif %}" data-has-dropdowns>
+        <button class="site-nav__link site-nav__link--main site-nav__link--button{% if link.child_active %} site-nav__link--active{% endif %}" type="button" aria-expanded="false" aria-controls="SiteNavLabel-{{ child_list_handle }}">
+          <span class="site-nav__label">{{ link.title | escape }}</span>{% include 'icon-chevron-down' %}
+        </button>
+
+        <div class="site-nav__dropdown{% if three_level_nav %} site-nav__dropdown--centered{% endif %} critical-hidden" id="SiteNavLabel-{{ child_list_handle }}">
+          {% if three_level_nav %}
+            <div class="site-nav__childlist">
+              <ul class="site-nav__childlist-grid">
+                {% if link.links != blank %}
+                  {% for childlink in link.links %}
+                    <li class="site-nav__childlist-item">
+                      <a href="{{ childlink.url }}"
+                        class="site-nav__link site-nav__child-link site-nav__child-link--parent"
+                        {% if childlink.current %} aria-current="page"{% endif %}
+                      >
+                        <span class="site-nav__label">{{ childlink.title | escape }}</span>
+                      </a>
+
+                      {% if childlink.links != blank %}
+                        <ul>
+                        {% for grandchildlink in childlink.links %}
+                          <li>
+                            <a href="{{ grandchildlink.url }}"
+                            class="site-nav__link site-nav__child-link"
+                            {% if grandchildlink.current %} aria-current="page"{% endif %}
+                          >
+                              <span class="site-nav__label">{{ grandchildlink.title | escape }}</span>
+                            </a>
+                          </li>
+                        {% endfor %}
+                        </ul>
+                      {% endif %}
+
+                    </li>
+                  {% endfor %}
+                {% endif %}
+              </ul>
+            </div>
+
+          {% else %}
+            <ul>
+              {% for childlink in link.links %}
+                <li>
+                  <a href="{{ childlink.url }}"
+                  class="site-nav__link site-nav__child-link{% if forloop.last %} site-nav__link--last{% endif %}"
+                  {% if childlink.current %} aria-current="page"{% endif %}
+                >
+                    <span class="site-nav__label">{{ childlink.title | escape }}</span>
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </div>
+      </li>
+    {% else %}
+      <li {% if link.active %} class="site-nav--active"{% endif %}>
+        <a href="{{ link.url }}"
+          class="site-nav__link site-nav__link--main{% if link.active %} site-nav__link--active{% endif %}"
+          {% if link.current %} aria-current="page"{% endif %}
+        >
+          <span class="site-nav__label">{{ link.title | escape }}</span>
+        </a>
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>
+{%endcomment%}
+
+
+
+<ul>
+  <li class=" top-logo-block">
+    <a href="#" >
+      <img class="logo-menu-w" src="{{ 'logo-menu.svg' | asset_url }}" /> 
+      <img class="logo-menu-b" src="{{ 'logo-menu-yellow.svg' | asset_url }}" />
+    </a>
+  </li>
+  {% for link in linklists[linklist].links %}
+    {%- assign child_list_handle = link.title | handleize -%}
+
+    {% comment %}
+      Check if third-level nav exists on each parent link.
+    {% endcomment %}
+    {%- assign three_level_nav = false -%}
+    {% if link.links != blank %}
+      {% if link.levels == 2 %}
+        {%- assign three_level_nav = true -%}
+      {% endif %}
+    {% endif %}
+  
+                      
+  {% if link.links != blank and link.title == 'Products' %}                    
+  <li>
+    <a href="{{link.url}}">{{ link.title | escape }} {% if link.links != blank %} <i class="fas fa-angle-down">  </i>{%endif%}</a>
+    {% if three_level_nav %}
+    <div class="sub-menu-main">
+    <ul class="sub-menu">
+      {% if link.links != blank %}
+      {% for childlink in link.links %}
+
+      <li class="{% if childlink.title == 'Education' %}col-md-2{% elsif childlink.title == 'Complete Systems' %}col-md-4 {%else%}col-md-6 {%endif%}">
+        <p>{{ childlink.title | escape }}</p>
+        {% for grandchildlink in childlink.links %}
+        {% assign collection = grandchildlink.object %}
+        {% if collection.image %}
+        <a href="{{ grandchildlink.url }}">                                          
+          {% if grandchildlink.title == 'Workshops & Online Courses' %}
+          <div class="edu-bg">
+            <img src="{{ collection | img_url: '1000x' }}" />
+          </div>
+          {%else%}
+          <img src="{{ collection | img_url: '1000x' }}" />
+          {%endif%}
+          <span>{{ grandchildlink.title }}</span>
+        </a>
+        {%endif%}
+        {%endfor%}
+      </li>
+      {%endfor%}
+      {%endif%}
+
+
+      <div class="nav-bg-black">
+        <div class="btn-area">
+          <a class="tertiary-btn" href="/collections/products">SEE ALL PRODUCT</a>
+        </div>
+      </div>
+    </ul>
+    </div>
+	{%endif%}
+  </li>
+  
+  {% elsif link.title == 'What You Need' %}
+  
+  {% if shop.metafields.custom_fields["what_you_need_menu"] != blank %}
+{% assign data_attr = shop.metafields._cf_shop["what_you_need_menu"].data_attr %}
+  <li {{ data_attr }}>
+    <a href="#">{{link.title}} <i class="fas fa-angle-down"></i>  </a>
+    <div class="sub-menu-main">
+      <ul class="sub-menu">
+        {% for sub_menu_item in shop.metafields.custom_fields["what_you_need_menu"] %}
+        <li class="col-md-3">
+          <a href="{{ sub_menu_item.menu_url }}">
+            {% if sub_menu_item.image != blank %}
+            <div class="bg-grey"> 
+              {% render "cf-image" with image: sub_menu_item.image %}
+            </div>
+            {% endif %}
+            {% if sub_menu_item.title != blank %}
+              <span>{{ sub_menu_item.title }}</span>
+            {% endif %}
+          </a> 
+        </li>
+        {%endfor%}
+
+        {% if shop.metafields.custom_fields["shop_features_list"] != blank %}
+          {% assign data_attr = shop.metafields._cf_shop["shop_features_list"].data_attr %}
+          <div class="nav-bg-need" {{data_attr}}>
+            <div class="btn-area">
+              <span class="need-text">{{ help_variable }}</span>
+
+              {% for feature_item in shop.metafields.custom_fields["shop_features_list"] %}
+              
+              {% comment %}
+              <a class="six-btn" href="{{ feature_item.features_link }}">
+                <img src="{{ 'warranty-icon.svg' | asset_url }}" /> 
+                
+                
+                un-comment this when png or jpg files are uploaded in the custom fields app
+                
+                {% render "cf-image" with image: feature_item.image, crop: "center", size: "380x380" %}
+                
+                <span>{{feature_item.title}}</span>
+              </a>
+              {% endcomment %}
+              
+              <a class="six-btn" href="{{ feature_item.features_link }}">
+                
+                {% render "cf-image" with image: feature_item.image, crop: "center", size: "380x380" %}
+                
+                <span>{{feature_item.title}}</span>
+              </a>
+              
+              
+              {% endfor %}
+            </div>
+          </div>
+		{% endif %}
+      </ul>
+    </div>
+  </li>
+  {% endif %}
+  {% else %}
+  <li>
+    <a href="{{ link.url }}"
+       class="{% if link.active %} active{% endif %}"
+       {% if link.current %} aria-current="page"{% endif %}
+       >
+      {{ link.title | escape }}
+    </a>
+  </li>
+  {%endif%}
+  
+  {% endfor %}                                             
+  <li><a href="#" class="tertiary-btn" tabindex="0" data-toggle="modal" data-target="#myModal_2">Support</a></li>
+</ul>
+

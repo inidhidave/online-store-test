@@ -1,0 +1,72 @@
+<section class="clearfix warranty-block">
+  <div class="container">
+    <div class="row">
+      <div class="warranty-block-content">
+      <h6>{{ section.settings.sub_heading }}</h6>
+      <h2>{{ section.settings.heading }} </h2>
+      <p>{{ section.settings.warranty_desc }}</p>
+    </div>
+     </div>
+  </div>
+</section>
+<div class="container">
+      <div class="warranty-block-content-tab">
+        <ul>
+          <li>
+            <a href="#" class="register-link">
+            <img src="https://cdn.shopify.com/s/files/1/0039/1567/7745/files/register.svg"/>
+            <img src="https://cdn.shopify.com/s/files/1/0039/1567/7745/files/register-hover.svg"/>
+            <h3> Register</h3>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="claim-link">
+            <img src="https://cdn.shopify.com/s/files/1/0039/1567/7745/files/claim.svg"/>
+            <img src="https://cdn.shopify.com/s/files/1/0039/1567/7745/files/claim-hover.svg"/>  
+            <h3>Claim</h3> 
+           
+            </a>
+          </li>
+        </ul>
+      </div>
+  <div class="register-form">
+    <div class="powr-form-builder" id="ec1fffe5_1614251402">
+    </div>
+    <script src="https://www.powr.io/powr.js?platform=shopify">
+    </script>
+  </div>
+  
+  <div class="claim-form">
+   <div class="powr-form-builder" id="25ce689b_1614243797"></div><script src="https://www.powr.io/powr.js?platform=shopify"></script>
+  </div>
+ 
+</div>
+
+{% schema %}
+  {
+    "name": "Warranty Section",
+    "settings": [
+		{
+			"type": "text",
+			"id": "sub_heading",
+			"label": "Sub Heading"
+		},
+		{
+			"type": "text",
+			"id": "heading",
+			"label": "Heading"
+		},
+		{
+			"type": "textarea",
+			"id": "warranty_desc",
+			"label": "Warranty Description"
+		}
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

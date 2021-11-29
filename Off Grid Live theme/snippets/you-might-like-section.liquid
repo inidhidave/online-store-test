@@ -1,0 +1,45 @@
+<section class="clearfix featured-courses-block space-100 space-85" id="featured-section">
+    <h6 class="sub-title">More Courses</h6>
+    <h2 class="main-title">You Might Also Like</h2>
+<div class="container">
+  <div class="more-courses"> <a href="/collections/courses">See All Courses</a></div>
+    <div class="row">
+  {% if shop.metafields.custom_fields["featured_courses"] != blank %}
+  <!-- <div class="custom-field custom-field__featured-courses custom-field__type--product-reference">
+    <h3 class="custom-field--title">Featured Courses</h3>
+    <div class="custom-field--value">   -->
+    {% assign product_refs = shop.metafields.custom_fields["featured_courses"] | split: "|" %}
+    {% for product_handle in product_refs %}
+      <div class="col-md-4">
+          <!-- <ul class="box-design">
+
+            <li class="save-box">
+              {% assign product_ref = all_products[product_handle] %}
+              {{ product_ref.title | link_to: product_ref.url }}
+            </li>
+
+        </ul> -->
+        <div class="box-design">
+                <div class="save-box">
+                  
+                  <span>Save <em>{{product_ref.price}}</em></span>
+                </div>
+                <a href="{{product_ref.url}}"><img src="{{product_ref | img_url: '400x300'}}"></a>
+                <div class="box-title">
+                    <h3>{{ product_ref.title | link_to: product_ref.url }}</h3>
+                  <span>{{ product.price | money }}</span>
+                </div>
+            </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
+
+
+    </div>
+<!--     </div>
+  </div> -->
+
+</section>
+
+

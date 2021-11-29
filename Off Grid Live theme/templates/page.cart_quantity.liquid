@@ -1,0 +1,8 @@
+{%- layout none -%}
+{%- assign cart_items_count = cart.items | size -%}
+{
+  {%- for item in cart.items -%}
+  "{{ item.id }}": {{- item.variant.inventory_quantity -}}
+  {%- unless forloop.index == cart_items_count -%},{%- endunless -%}
+  {%- endfor -%}
+}

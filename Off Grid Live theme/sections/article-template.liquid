@@ -1,0 +1,296 @@
+  <div class="blog-breadcrumb">
+  	 {% render 'breadcrumbs' %}
+  </div>
+<div class="container">
+
+<div class="row">
+<div class=col-md-9>
+  <div class="section-header text-center">
+    {% if section.settings.blog_show_date %}
+    <span class="article__date">
+      {{ article.published_at | time_tag: '%d %b %Y', datetime:'%d -%m %Y'}}
+    </span>
+  {% endif %}
+    <h1 class="article__title" id="title-0">{{ article.title }}</h1>
+  <img src="{{ article.image.src | img_url: '500x' }}">
+  
+    
+  {% comment %}  
+  {% if section.settings.blog_show_author %}
+    <span class="article__author">{{ 'blogs.article.by_author' | t: author: article.author }}</span>
+  {% endif %}
+  {% endcomment %}
+   
+</div>
+  <div class="rte">
+  {{ article.content }}
+</div>
+  
+  <div class="blogs-tag-social-box">
+  <div class="blogs-tag">
+    
+    {% comment %}
+    {% for tag in blog.tags %} 
+  {{ tag }}
+{% endfor %}
+    {%endcomment%}
+    
+    <ul>
+      
+      <li><span>Tags:</span></li>
+      <li>
+        {% for tag in blog.tags %}
+        <a href="{{tag.url}}">{{tag.title}}<i>,</i></a>{% unless forloop.last %}{% endunless %}  
+        {% endfor %}
+      </li>
+      
+<!--       <li><a href="#">Clean, </a><a href="#">Free,</a><a href="#"> Energy,</a> <a href="#">Tips,</a><a href="#">Savings</a></li> -->
+    </ul>
+  </div>
+  
+  <div class="blog-social-section">
+  <div class="social-icons-listing">
+            <ul>
+              <li><span>Social Sharing</span></li>
+              <li>
+                <a href="https://www.facebook.com/24hoursolarpower" class="fb" target="_blank">
+                  <img src="//cdn.shopify.com/s/files/1/0039/1567/7745/t/3/assets/87-icon.svg?v=14692168966704351114">
+                </a>
+              </li>
+              
+              
+              <li>
+                <a href="https://www.instagram.com/" class="twitter" target="_blank">
+                  <img src="//cdn.shopify.com/s/files/1/0039/1567/7745/t/3/assets/85-icon.svg?v=12482077945797423305">
+                </a>
+              </li>
+              
+              <li>
+                <a href="https://twitter.com/" class="insta" target="_blank">
+                  <img src="//cdn.shopify.com/s/files/1/0039/1567/7745/t/3/assets/86-icon.svg?v=1655184423777466330">
+                </a>
+              </li>
+              <li>
+                <a href="https://in.pinterest.com/" class="pinterest" target="_blank">
+                  <img src="{{'pinterest.svg' | asset_url}}">
+                </a>
+              </li>
+              
+            </ul>
+            
+          </div>
+  </div>
+    </div>
+  
+  <div class="article-next-box">
+    
+    {% assign current_found = false %}
+    {% assign done = false %}
+    {% for a in blog.articles %}
+    	{% if current_found and done == false %}
+    		{% assign next_article = a %}
+    		{% assign done = true %}
+    	{% endif %}
+    	{% unless done %}
+    		{% if a.id == article.id %}
+    			{% assign current_found = true %}
+    		{% else %}
+    			{% assign prev_article = a %}
+    		{% endif %}
+    	{% endunless %}
+    {% endfor %}
+    
+    
+    
+    {% if prev_article %}
+    <div class="prev-article-btn">
+      <a href="{{prev_article.url }}"><img src="{{prev_article.image | img_url}}">
+      <h6>{{prev_article.title }}</h6></a>
+    </div>
+    {% endif %}
+    {% if next_article %}
+    <div class="next-article-btn">
+      <a href="{{next_article.url}}"><h6>{{next_article.title}}</h6>
+        <img src="{{next_article.image | img_url}}"></a>
+    </div>
+    {%endif%}
+  </div>
+  
+  
+  </div>
+<div class=col-md-3>
+  
+	{% include 'blog-sidebar' %}
+  <div class="row call-to-action">
+            <div class="col-sm-12">
+                <img src="//cdn.shopify.com/s/files/1/0039/1567/7745/files/84-icon.png">
+            </div>
+            <div class="col-sm-12">
+                <div class="cta-title">
+                    <span>HAVE A QUESTION </span>
+                    <h4>Talk to Us</h4>
+                </div>
+            </div>
+            <div class="col-sm-12 text-right">
+            <a href="#" class="tertiary-btn" tabindex="0" data-toggle="modal" data-target="#myModal_1"> Contact</a>
+            </div>
+        </div>
+</div>
+</div>
+</div>
+<div class="might-like-article-block">
+<h6 class="sub-title">Learning Resources</h6>
+    <h2 class="main-title">You Might Also Like</h2>
+  <div class="container">
+                <div class="row">
+               {% for link in linklists.blogs.links %}
+                {% assign blog = link.object %}
+                
+               {% for article in blog.articles limit:3  %}
+        <div class="col-md-4 mrg-btm-40">
+            <a href="{{ article.url }}"><div class="box-design">
+                <div class="save-box">
+                  {% if section.settings.blog_show_date %}
+                    <span>{{ article.published_at | time_tag: '%d %b', datetime:'%d -%m' }}</span>
+                  {% endif %}
+                </div>
+                <img src="{{ article.image | img_url:"900x" }}" class="blog_image" />
+                <div class="box-title">
+                    <h3>{{ article.title }}</h3>
+                  <span>{% if article.excerpt.size > 0 %}
+                        {{ article.excerpt }}
+                        {% else %}
+                        {{ article.content | strip_html | truncate: 150 }}
+                        {% endif %}</span>
+                </div>
+            </div>
+          </a>
+          <div class="btn-area">
+            <a href="{{ article.url }}" class="fourth-btn">Read More</a>
+          </div>
+        </div>
+      {% endfor %}
+                
+     {% endfor %}            
+    </div>
+  </div>
+</div>
+{% comment %}
+{% if section.settings.show_share_buttons %}
+  {% include 'social-sharing', share_title: article.title, share_permalink: article.url, share_image: article.image %}
+{% endif %}
+{% endcomment %}
+
+{% schema %}
+{
+  "name": {
+    "cs": "Příspěvky",
+    "da": "Opslag",
+    "de": "Posts",
+    "en": "Posts",
+    "es": "Publicaciones",
+    "fi": "Julkaisut",
+    "fr": "Articles",
+    "it": "Articoli",
+    "ja": "投稿",
+    "ko": "게시물",
+    "nb": "Innlegg",
+    "nl": "Berichten",
+    "pl": "Posty",
+    "pt-BR": "Posts",
+    "pt-PT": "Publicações",
+    "sv": "Inlägg",
+    "th": "โพสต์",
+    "tr": "Gönderiler",
+    "vi": "Bài viết",
+    "zh-CN": "文章",
+    "zh-TW": "貼文"
+  },
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "blog_show_author",
+      "label": {
+        "cs": "Zobrazit autora",
+        "da": "Vis forfatter",
+        "de": "Autor anzeigen",
+        "en": "Show author",
+        "es": "Mostrar autor",
+        "fi": "Näytä tekijä",
+        "fr": "Afficher l'auteur",
+        "it": "Mostra autore",
+        "ja": "執筆者を表示する",
+        "ko": "작성자 표시",
+        "nb": "Vis forfatter",
+        "nl": "Auteur weergeven",
+        "pl": "Pokaż autora",
+        "pt-BR": "Exibir autor",
+        "pt-PT": "Mostrar autor",
+        "sv": "Visa författare",
+        "th": "แสดงผู้เขียน",
+        "tr": "Yazarı göster",
+        "vi": "Hiển thị tác giả",
+        "zh-CN": "显示作者",
+        "zh-TW": "顯示作者"
+      },
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "blog_show_date",
+      "label": {
+        "cs": "Zobrazit datum",
+        "da": "Vis dato",
+        "de": "Datum anzeigen",
+        "en": "Show date",
+        "es": "Mostrar fecha",
+        "fi": "Näytä päivämäärä",
+        "fr": "Afficher la date",
+        "it": "Mostra data",
+        "ja": "日付を表示する",
+        "ko": "날짜 표시",
+        "nb": "Vis dato",
+        "nl": "Datum weergeven",
+        "pl": "Pokaż datę",
+        "pt-BR": "Exibir data",
+        "pt-PT": "Mostrar data",
+        "sv": "Visa datum",
+        "th": "แสดงวันที่",
+        "tr": "Tarihi göster",
+        "vi": "Hiển thị ngày",
+        "zh-CN": "显示日期",
+        "zh-TW": "顯示日期"
+      },
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_share_buttons",
+      "label": {
+        "cs": "Zobrazit tlačítka pro sdílení na sociálních sítích",
+        "da": "Vis knapper til deling på sociale medier",
+        "de": "Buttons für Social Media anzeigen",
+        "en": "Show social sharing buttons",
+        "es": "Mostrar botones para compartir en redes sociales",
+        "fi": "Näytä sosiaalisen median jakamispainikkeet",
+        "fr": "Afficher les boutons de partage sur les médias sociaux",
+        "it": "Mostra i pulsanti per la condivisione sui social",
+        "ja": "ソーシャルメディアでの共有ボタンを表示する",
+        "ko": "소셜 공유 버튼 표시",
+        "nb": "Vis knapper for deling på sosiale medier",
+        "nl": "Knoppen voor sociaal delen weergeven",
+        "pl": "Pokaż przyciski udostępniania w mediach społecznościowych",
+        "pt-BR": "Exibir botões de compartilhamento em redes sociais",
+        "pt-PT": "Mostrar botões de partilha nas redes sociais",
+        "sv": "Visa knappar för delning i sociala medier",
+        "th": "แสดงปุ่มสำหรับแชร์ลงโซเชียล",
+        "tr": "Sosyal medya paylaşım düğmelerini göster",
+        "vi": "Hiển thị nút chia sẻ qua mạng xã hội",
+        "zh-CN": "显示社交分享按钮",
+        "zh-TW": "顯示社群分享按鈕"
+      },
+      "default": true
+    }
+  ]
+}
+{% endschema %}

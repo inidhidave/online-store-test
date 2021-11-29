@@ -1,0 +1,85 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="price-match-content">
+        <h6>{{ section.settings.sub_heading }} </h6>
+        <h2>{{ section.settings.heading }} </h2>
+        <h3>{{ section.settings.p_desc }} </h3>
+        <span>
+        {{ section.settings.span_desc }} 
+        </span>
+        
+        <ul>
+          <h3>{{ section.settings.ul_headiing }} </h3>
+          {% for block in section.blocks %}
+          <li>
+            <span>{{ block.settings.list_text }}</span>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-6">
+    <img src="{{ section.settings.price_image | img_url: 'master' }}" />
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Terms of service Section",
+    "settings": [
+		{
+			"type": "text",
+			"id": "sub_heading",
+			"label": "Sub Heading"
+		},
+		{
+			"type": "text",
+			"id": "heading",
+			"label": "Heading"
+		},
+		{
+			"type": "text",
+			"id": "p_desc",
+			"label": "Description"
+		},
+		{
+			"type": "html",
+			"id": "span_desc",
+			"label": "Description"
+		},
+		{
+			"type": "text",
+			"id": "ul_headiing",
+			"label": "Heading"
+		},
+		{
+			"type": "image_picker",
+			"id": "price_image",
+			"label": "Price Image"
+		}
+	],
+	
+	"blocks": [
+		{
+			"type": "block",
+			"name": "List Block",
+			"settings": [
+				{
+					"type": "text",
+					"id": "list_text",
+					"label": "List text"
+				}
+				
+			]
+		}
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

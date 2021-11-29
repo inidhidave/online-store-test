@@ -1,0 +1,1732 @@
+{
+  "current": {
+    "favicon": "shopify:\/\/shop_images\/favicon.png",
+    "checkout_input_background_color_mode": "white",
+    "checkout_accent_color": "#ffb327",
+    "checkout_button_color": "#000000",
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {
+          "align_logo": "left",
+          "phone_text": "<a href=\"tel:1300%20244%20251\"><i class=\"fas fa-mobile-alt\"><\/i>0457 997 484<\/a>",
+          "time_text": "By appointment only",
+          "price_text": "",
+          "price_url": "",
+          "logo_max_width": 105,
+          "main_linklist": "main-menu-new-1",
+          "message": false,
+          "home_page_only": true,
+          "message_text": "Announce something here",
+          "message_link": "",
+          "color_bg": "#3a3a3a",
+          "color_text": "#ffffff",
+          "need_help_text": "Need Help ?",
+          "white_logo": "shopify:\/\/shop_images\/the-off-grid-shop_1.png",
+          "black_logo": "shopify:\/\/shop_images\/the-off-grid-shop-black.png"
+        }
+      },
+      "hero-1": {
+        "type": "hero",
+        "disabled": true,
+        "settings": {
+          "alignment": "center",
+          "hero_layout": "full_width",
+          "hero_size": "large",
+          "text_size": "large",
+          "title": "Image with text overlay",
+          "text": "<p>Use overlay text to give your customers insight into your brand. Select imagery and text that relates to your style and story.<\/p>",
+          "button_label": "",
+          "button_link": ""
+        }
+      },
+      "feature-row": {
+        "type": "feature-row",
+        "disabled": true,
+        "settings": {
+          "layout": "left",
+          "title": "Image with text",
+          "text": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+          "button_label": "",
+          "button_link": ""
+        }
+      },
+      "feature-columns": {
+        "type": "feature-columns",
+        "disabled": true,
+        "blocks": {
+          "feature-columns-0": {
+            "type": "text_block",
+            "settings": {
+              "enable_image": true,
+              "title": "Add a title or tagline",
+              "text": "<p>Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.<\/p>",
+              "button_label": "",
+              "button_link": ""
+            }
+          },
+          "feature-columns-1": {
+            "type": "text_block",
+            "settings": {
+              "enable_image": true,
+              "title": "Add a title or tagline",
+              "text": "<p>Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.<\/p>",
+              "button_label": "",
+              "button_link": ""
+            }
+          },
+          "feature-columns-2": {
+            "type": "text_block",
+            "settings": {
+              "enable_image": true,
+              "title": "Add a title or tagline",
+              "text": "<p>Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.<\/p>",
+              "button_label": "",
+              "button_link": ""
+            }
+          }
+        },
+        "block_order": [
+          "feature-columns-0",
+          "feature-columns-1",
+          "feature-columns-2"
+        ],
+        "settings": {
+          "title": "",
+          "align_text": "left"
+        }
+      },
+      "collection": {
+        "type": "collection",
+        "disabled": true,
+        "settings": {
+          "title": "Featured collection",
+          "collection": "",
+          "grid": 4,
+          "rows": 2,
+          "show_vendor": false,
+          "show_view_all": false
+        }
+      },
+      "hero-2": {
+        "type": "hero",
+        "disabled": true,
+        "settings": {
+          "alignment": "center",
+          "hero_layout": "full_width",
+          "hero_size": "medium",
+          "text_size": "large",
+          "title": "Image with text overlay",
+          "text": "<p>Use overlay text to give your customers insight into your brand. Select imagery and text that relates to your style and story.<\/p>",
+          "button_label": "",
+          "button_link": ""
+        }
+      },
+      "quotes": {
+        "type": "quotes",
+        "disabled": true,
+        "blocks": {
+          "quotes-0": {
+            "type": "quote",
+            "settings": {
+              "quote": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.<\/p>",
+              "author": "Author's name"
+            }
+          },
+          "quotes-1": {
+            "type": "quote",
+            "settings": {
+              "quote": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.<\/p>",
+              "author": "Author's name"
+            }
+          },
+          "quotes-2": {
+            "type": "quote",
+            "settings": {
+              "quote": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.<\/p>",
+              "author": "Author's name"
+            }
+          }
+        },
+        "block_order": [
+          "quotes-0",
+          "quotes-1",
+          "quotes-2"
+        ],
+        "settings": {
+          "title": ""
+        }
+      },
+      "image-bar": {
+        "type": "image-bar",
+        "disabled": true,
+        "blocks": {
+          "image-bar-0": {
+            "type": "image",
+            "settings": {
+              "alignment": "center",
+              "link": "",
+              "cta_label": ""
+            }
+          },
+          "image-bar-1": {
+            "type": "image",
+            "settings": {
+              "alignment": "center",
+              "link": "",
+              "cta_label": ""
+            }
+          },
+          "image-bar-2": {
+            "type": "image",
+            "settings": {
+              "alignment": "center",
+              "link": "",
+              "cta_label": ""
+            }
+          }
+        },
+        "block_order": [
+          "image-bar-0",
+          "image-bar-1",
+          "image-bar-2"
+        ],
+        "settings": {
+          "section_height": "medium"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "d66e3874-99ad-4655-9b3e-7c533790fdaa": {
+            "type": "link_list",
+            "settings": {
+              "title": "Our Products",
+              "menu": "footer-menu-1"
+            }
+          },
+          "4501c624-0ed6-4dac-b139-aba556afdb8b": {
+            "type": "link_list",
+            "settings": {
+              "title": "Quick links",
+              "menu": "useful-links-footer"
+            }
+          }
+        },
+        "block_order": [
+          "d66e3874-99ad-4655-9b3e-7c533790fdaa",
+          "4501c624-0ed6-4dac-b139-aba556afdb8b"
+        ],
+        "settings": {
+          "icon_address": "shopify:\/\/shop_images\/address.png",
+          "address_title": "Our Address",
+          "address": "We operate by appointment only <!--Shop 2, 27 Snow Street,<br> South Lismore NSW 2480-->",
+          "icon_phone": "shopify:\/\/shop_images\/phone.png",
+          "phone_title": "Phone Us",
+          "phone": "<a class=\"phone_number_class\" href=\"tel:1300%20244%20251\">0457 997 484<\/a>",
+          "icon_email": "shopify:\/\/shop_images\/email.png",
+          "email_title": "Email Us",
+          "email": "<a href=\"https:\/\/www.theoffgridshop.com.au\/pages\/contact-us-1\" class=\"phone_number_class\">Fill out the contact us form<\/a>\n<!--<a class=\"phone_number_class\" href=\"mailto:admin@theoffgridshop.com.au\">admin@theoffgridshop.com.au<\/a>-->",
+          "footer_logo": "shopify:\/\/shop_images\/the-off-grid-shop_1.png",
+          "footer_desc": "",
+          "footer_copyright": "© 2021 The Off-Grid Shop. All Rights Reserved.",
+          "terms_link": "shopify:\/\/policies\/terms-of-service",
+          "terms_title": "Terms & Condititons",
+          "privacy_link": "shopify:\/\/policies\/privacy-policy",
+          "privacy_title": "Privacy Policy",
+          "newsletter_title": "Sign Up to Our Newsletter!",
+          "newsletter_subtitle": "Receive Promotions, new products and sales offers. Directly to your inbox.",
+          "social_url1": "https:\/\/www.facebook.com\/theoffgridshop",
+          "social_url2": "https:\/\/www.instagram.com\/",
+          "social_url3": "",
+          "social_url4": "https:\/\/www.youtube.com\/playlist?list=PLjrJWmgaTFLUe4IWpz15etbLVmlHmtAF1",
+          "show_payment_icons": true,
+          "color_footer_bg": "#f6f6f6",
+          "color_footer_text": "#333232",
+          "show_locale_selector": true,
+          "show_currency_selector": true
+        }
+      },
+      "1612531463bc65e1af": {
+        "type": "banner-section",
+        "blocks": {
+          "50fe6860-7664-4e52-9e43-475d722c67f0": {
+            "type": "banner",
+            "settings": {
+              "banner_image": "shopify:\/\/shop_images\/banner-new.jpg",
+              "banner_dec": "Choose the best off-grid solar system from The Off Grid Shop.",
+              "banner_title": "Looking to Start Your <br>Off Grid  Journey?",
+              "btn_link": "shopify:\/\/pages\/our-process",
+              "btn_text": "Start Here"
+            }
+          },
+          "dc5f8bf6-06fe-4862-b199-8ce6d592d78d": {
+            "type": "banner",
+            "settings": {
+              "banner_image": "shopify:\/\/shop_images\/06-why-us-3.png",
+              "banner_dec": "Choose the best off-grid solar system from The Off Grid Shop.",
+              "banner_title": "Looking to Start Your <br>Off Grid  Journey?",
+              "btn_link": "https:\/\/www.theoffgridshop.com.au\/collections\/all",
+              "btn_text": "Start Here"
+            }
+          },
+          "0f256b8c-a2a4-4bed-b1aa-f2fb1a9bf1ac": {
+            "type": "banner",
+            "settings": {
+              "banner_image": "shopify:\/\/shop_images\/07-our-progress-1.jpg",
+              "banner_dec": "Choose the best off-grid solar system from The Off Grid Shop.",
+              "banner_title": "Looking to Start Your <br>Off Grid  Journey?",
+              "btn_link": "shopify:\/\/pages\/learning-resources",
+              "btn_text": "Start Here"
+            }
+          }
+        },
+        "block_order": [
+          "50fe6860-7664-4e52-9e43-475d722c67f0",
+          "dc5f8bf6-06fe-4862-b199-8ce6d592d78d",
+          "0f256b8c-a2a4-4bed-b1aa-f2fb1a9bf1ac"
+        ],
+        "settings": {}
+      },
+      "1612765004a06192bf": {
+        "type": "featured-courses",
+        "settings": {
+          "sub_title": "CATERED FOR YOU",
+          "main_title": "Featured Products",
+          "btn_link": "shopify:\/\/collections\/ecoflow",
+          "btn_text": "More Products"
+        }
+      },
+      "161286138514536197": {
+        "type": "our-product",
+        "settings": {
+          "sub_heading": "Choose here",
+          "main_heading": "Our Product",
+          "btn_link": "https:\/\/www.theoffgridshop.com.au\/collections\/all",
+          "btn_text": "See All Products"
+        }
+      },
+      "16128719839a2dd61e": {
+        "type": "call-to-section",
+        "settings": {
+          "icon_cta": "shopify:\/\/shop_images\/84-icon_a2e989dd-20d8-4cd4-b52d-724e8ac37d3f.png",
+          "desc_text": "NEED HELP",
+          "heading": "Nor Sure What To Get",
+          "btn_link": "#",
+          "btn_text": "Let's Chat"
+        }
+      },
+      "161293783809cb24d8": {
+        "type": "our-client-section",
+        "blocks": {
+          "6af07f4d-b4c2-44e0-b46d-2b724a5d491f": {
+            "type": "logo",
+            "settings": {
+              "client_loogo": "shopify:\/\/shop_images\/client-logo-1.png"
+            }
+          },
+          "1f97f895-4ab6-4d0e-9ea0-1d201f12647e": {
+            "type": "logo",
+            "settings": {
+              "client_loogo": "shopify:\/\/shop_images\/client-logo-2.png"
+            }
+          },
+          "e14531f6-a61a-41f0-bee5-b871b75044d8": {
+            "type": "logo",
+            "settings": {
+              "client_loogo": "shopify:\/\/shop_images\/client-logo-3.png"
+            }
+          },
+          "27434a9c-e244-4a47-853b-ce9bbf0af59e": {
+            "type": "logo",
+            "settings": {
+              "client_loogo": "shopify:\/\/shop_images\/client-logo-4_8a4f168b-eae1-4f46-8d63-e09b5d406deb.png"
+            }
+          },
+          "78d63f54-21aa-4c12-9874-637c80c6cca9": {
+            "type": "logo",
+            "settings": {
+              "client_loogo": "shopify:\/\/shop_images\/client-logo-5_bf3a477d-84ac-4ffe-9602-2b6b0f5b4a8f.png"
+            }
+          },
+          "2eae080d-87b7-446c-9f2d-b51bb40ccda2": {
+            "type": "logo",
+            "settings": {
+              "client_loogo": "shopify:\/\/shop_images\/client-logo-6_5d8aa4d3-535b-4e03-9632-95d52ba27695.png"
+            }
+          }
+        },
+        "block_order": [
+          "6af07f4d-b4c2-44e0-b46d-2b724a5d491f",
+          "1f97f895-4ab6-4d0e-9ea0-1d201f12647e",
+          "e14531f6-a61a-41f0-bee5-b871b75044d8",
+          "27434a9c-e244-4a47-853b-ce9bbf0af59e",
+          "78d63f54-21aa-4c12-9874-637c80c6cca9",
+          "2eae080d-87b7-446c-9f2d-b51bb40ccda2"
+        ],
+        "settings": {}
+      },
+      "161295820330897eb6": {
+        "type": "testimonial-slider-section",
+        "disabled": true,
+        "settings": {}
+      },
+      "1613026359b4038eee": {
+        "type": "what-you-need",
+        "blocks": {
+          "719fb635-9a72-49a0-9518-6ad83d65fc75": {
+            "type": "tabs_blocks",
+            "settings": {
+              "tab_title": "Why Off Grid",
+              "tab_content_title": "The Benefits",
+              "tab_content_para": "There is an amazing feeling you get when you buy a property and install your own power station. Supporting our customers to design and build their own power station is a very rewarding process for us as a business.\n\nUnderstanding is the most powerful tool to have when deciding to live off-grid as you can save a lot of money & heartache with some knowledge.",
+              "tab_btn_text": "Learn More",
+              "tab_btn_url": "shopify:\/\/pages\/why-off-grid",
+              "tab_content_image_large": "shopify:\/\/shop_images\/why-off-grid_cdb27a59-18da-4ecf-b31d-f37c565ee073.png"
+            }
+          },
+          "adcfcec0-caf0-4f3a-9906-db7a6db220a4": {
+            "type": "tabs_blocks",
+            "settings": {
+              "tab_title": "Why Us",
+              "tab_content_title": "What You Get",
+              "tab_content_para": "We run our lives from batteries and have years of experience of the good times and the not so good times to share with you on your journey of going off-grid or installing a small battery bank to run dedicated circuits.\n\nOur team are passionate about getting you the best system for your energy demands and once you talk to one of our team members you will know how passionate we are.",
+              "tab_btn_text": "Learn More",
+              "tab_btn_url": "shopify:\/\/pages\/why-us",
+              "tab_content_image_large": "shopify:\/\/shop_images\/why-img.png"
+            }
+          },
+          "632b1b1f-1756-408f-87ed-0daa08fcf6a6": {
+            "type": "tabs_blocks",
+            "settings": {
+              "tab_title": "Our Process",
+              "tab_content_title": "Our Process",
+              "tab_content_para": "Our team are passionate about getting you the best system for your energy demands and once you talk to one of our team members you will know how passionate we are.",
+              "tab_btn_text": "Learn More",
+              "tab_btn_url": "shopify:\/\/pages\/our-process"
+            }
+          },
+          "a4a815e4-7866-4c79-9656-9837d3835f7d": {
+            "type": "tabs_blocks",
+            "settings": {
+              "tab_title": "Who's Off Grid for",
+              "tab_content_title": "Is Off Grid For You?",
+              "tab_content_para": "Save money. - Be more independent - Be blackout proof.\nWhen you have a reliable grid the best battery you can use is the one you already have - your hot water system.",
+              "tab_btn_text": "Learn More",
+              "tab_btn_url": "shopify:\/\/pages\/whos-off-grid-for",
+              "tab_content_image_large": "shopify:\/\/shop_images\/09-whos-offgrid-1.png"
+            }
+          }
+        },
+        "block_order": [
+          "719fb635-9a72-49a0-9518-6ad83d65fc75",
+          "adcfcec0-caf0-4f3a-9906-db7a6db220a4",
+          "632b1b1f-1756-408f-87ed-0daa08fcf6a6",
+          "a4a815e4-7866-4c79-9656-9837d3835f7d"
+        ],
+        "settings": {
+          "sub_title": "What You Need",
+          "title1": "All About Off Grid"
+        }
+      },
+      "inner-header": {
+        "type": "inner-header",
+        "settings": {}
+      },
+      "why-us-section": {
+        "type": "why-us-section",
+        "blocks": {
+          "f3724570-08d2-44c9-baa4-9c8793912132": {
+            "type": "second-section-right",
+            "settings": {
+              "icons_right1": "shopify:\/\/shop_images\/install-1.png",
+              "icon_text1": "Price Match",
+              "icon_desc": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod"
+            }
+          },
+          "205119a8-c506-4d12-99ce-87eb9ce248d7": {
+            "type": "second-section-right",
+            "settings": {
+              "icons_right1": "shopify:\/\/shop_images\/experience.png",
+              "icon_text1": "15yrs of Experience",
+              "icon_desc": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod"
+            }
+          },
+          "e96c784f-2a4f-4bc6-ab2c-e1f4e04a6fcc": {
+            "type": "second-section-right",
+            "settings": {
+              "icon_text1": "",
+              "icon_desc": ""
+            }
+          },
+          "909caeed-7095-4596-a980-834c9b52bfbc": {
+            "type": "third-section",
+            "settings": {
+              "why_us_image": "shopify:\/\/shop_images\/why-img.png"
+            }
+          }
+        },
+        "block_order": [
+          "f3724570-08d2-44c9-baa4-9c8793912132",
+          "205119a8-c506-4d12-99ce-87eb9ce248d7",
+          "e96c784f-2a4f-4bc6-ab2c-e1f4e04a6fcc",
+          "909caeed-7095-4596-a980-834c9b52bfbc"
+        ],
+        "settings": {
+          "sub_heading": "Why Us",
+          "heading": "The Off Grid Shop",
+          "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elit."
+        }
+      },
+      "about-us-section": {
+        "type": "about-us-section",
+        "settings": {
+          "about_image": "shopify:\/\/shop_images\/about-left.jpg",
+          "about_heading": "About Us",
+          "about_desc": "<p>Our team is passionate about designing and installing systems that meet and exceed our clients energy requirements. We offer a full service from concept, planning, installation and maintenance.<\/p>\n\n<p>Our solutions provide proven results for our clients for powering their homes or meeting their sustainability and financial targets for business. We look forward to empowering you to take advantage of renewable energy. <\/p>",
+          "btn_link": "https:\/\/www.theoffgridshop.com.au\/collections\/all",
+          "btn_text": "Shop Now"
+        }
+      },
+      "services-icon-section": {
+        "type": "services-icon-section",
+        "blocks": {
+          "257ac690-bc07-48ee-b645-a439d17892e4": {
+            "type": "icon",
+            "settings": {
+              "service_icon": "shopify:\/\/shop_images\/why-us.png",
+              "service_heading": "Why Us",
+              "icon_url": "shopify:\/\/pages\/why-off-grid"
+            }
+          },
+          "2fb7e901-a19d-4523-bd46-a020f1ecebfb": {
+            "type": "icon",
+            "settings": {
+              "service_icon": "shopify:\/\/shop_images\/our-process_a490d624-bb62-4aa3-aa32-77ce68cb5da1.png",
+              "service_heading": "Our Process",
+              "icon_url": "shopify:\/\/pages\/our-process"
+            }
+          },
+          "94d95e75-fd43-4425-b3a0-6ae8698f0a4b": {
+            "type": "icon",
+            "settings": {
+              "service_icon": "shopify:\/\/shop_images\/Who_s_Grid_Off_For.png",
+              "service_heading": "Who's Grid Off For",
+              "icon_url": "shopify:\/\/pages\/whos-off-grid-for"
+            }
+          }
+        },
+        "block_order": [
+          "257ac690-bc07-48ee-b645-a439d17892e4",
+          "2fb7e901-a19d-4523-bd46-a020f1ecebfb",
+          "94d95e75-fd43-4425-b3a0-6ae8698f0a4b"
+        ],
+        "settings": {}
+      },
+      "clean-free-section": {
+        "type": "clean-free-section",
+        "settings": {
+          "sub_heading": "Why Off Grid",
+          "heading": "Clean & Free Energy",
+          "description": "When you have a reliable grid the best battery you can use is the one you already have - your hot water system. Most hot water systems use 10-15kWs a day so diverting your excess solar to your hot water tank can be a better solution and something to consider. There are devices that can divert your excess solar to your hot water or it can be done with a simple timer. It would depend on your budget and what you want out of your system.",
+          "sec_img": "shopify:\/\/shop_images\/51-icon.png",
+          "btn_link": "https:\/\/www.theoffgridshop.com.au\/collections\/all",
+          "btn_text": "Shop Now"
+        }
+      },
+      "happy-client": {
+        "type": "happy-client",
+        "blocks": {
+          "2f579ad4-00ab-48ca-ad75-e22fcf7e2b67": {
+            "type": "Blocks",
+            "settings": {
+              "client_icon": "shopify:\/\/shop_images\/House.png",
+              "sub_heading": "",
+              "heading": "500+",
+              "icon_heading": "HOUSEs Installed"
+            }
+          },
+          "37decd0b-56b7-4ca6-a609-8131c3951a74": {
+            "type": "Blocks",
+            "settings": {
+              "client_icon": "shopify:\/\/shop_images\/Montly_Savings.png",
+              "sub_heading": "From",
+              "heading": "$1,200+",
+              "icon_heading": "Montly Savings"
+            }
+          },
+          "9eb984c0-704c-4812-a941-74c0a1172cef": {
+            "type": "Blocks",
+            "settings": {
+              "client_icon": "shopify:\/\/shop_images\/Happy_Customers.png",
+              "sub_heading": "",
+              "heading": "3,000+",
+              "icon_heading": "Happy Customers"
+            }
+          },
+          "3a4f2b07-24bd-4b55-ba4b-10daa5c03988": {
+            "type": "Blocks",
+            "settings": {
+              "client_icon": "shopify:\/\/shop_images\/To_install.png",
+              "sub_heading": "",
+              "heading": "1hr",
+              "icon_heading": "To install"
+            }
+          }
+        },
+        "block_order": [
+          "2f579ad4-00ab-48ca-ad75-e22fcf7e2b67",
+          "37decd0b-56b7-4ca6-a609-8131c3951a74",
+          "9eb984c0-704c-4812-a941-74c0a1172cef",
+          "3a4f2b07-24bd-4b55-ba4b-10daa5c03988"
+        ],
+        "settings": {}
+      },
+      "benefit-section": {
+        "type": "benefit-section",
+        "blocks": {
+          "71385a83-19b9-47be-8967-8c06172e154d": {
+            "type": "faq",
+            "settings": {
+              "accordin_icon": "shopify:\/\/shop_images\/payment.png",
+              "accordin_heading": "One Payment",
+              "accordin_desc": ""
+            }
+          },
+          "b70b27a1-ab93-405d-9d88-e916eb69d149": {
+            "type": "faq",
+            "settings": {
+              "accordin_icon": "shopify:\/\/shop_images\/bills.png",
+              "accordin_heading": "No Electricity Bills",
+              "accordin_desc": ""
+            }
+          },
+          "13d24a1a-983c-4d81-a741-a3065d69bde3": {
+            "type": "faq",
+            "settings": {
+              "accordin_icon": "shopify:\/\/shop_images\/install-benefit.png",
+              "accordin_heading": "Easy to Install",
+              "accordin_desc": ""
+            }
+          },
+          "ebde0a1a-1763-4479-b5e4-a23d5bcb75fa": {
+            "type": "faq",
+            "settings": {
+              "accordin_icon": "shopify:\/\/shop_images\/save.png",
+              "accordin_heading": "Save Long Term",
+              "accordin_desc": ""
+            }
+          }
+        },
+        "block_order": [
+          "71385a83-19b9-47be-8967-8c06172e154d",
+          "b70b27a1-ab93-405d-9d88-e916eb69d149",
+          "13d24a1a-983c-4d81-a741-a3065d69bde3",
+          "ebde0a1a-1763-4479-b5e4-a23d5bcb75fa"
+        ],
+        "settings": {
+          "benefit_img": "shopify:\/\/shop_images\/benefits_eac886b8-7404-4b15-b372-d20bf4dac7e8.png",
+          "benefit_sub_heading": "Clever Solution",
+          "benefit_heading": "The Benefits",
+          "benefit_desc": "<p>There is an amazing feeling you get when you buy a property and install your own power station. Supporting our customers to design and build their own power station is a very rewarding process for us as a business. <\/p>\n\n<p>Understanding is the most powerful tool to have when deciding to live off-grid as you can save a lot of money & heartache with some knowledge.<\/p>"
+        }
+      },
+      "1613124435e4967a7f": {
+        "type": "blog-section",
+        "disabled": true,
+        "settings": {
+          "sub_title": "Get Informed",
+          "main_title": "Learning Resources",
+          "btn_link": "shopify:\/\/pages\/learning-resources",
+          "btn_text": "Learning Center",
+          "blog_show_date": true
+        }
+      },
+      "why-off-grid-inner-header": {
+        "type": "why-off-grid-inner-header",
+        "settings": {
+          "banner_img": "shopify:\/\/shop_images\/04-why-offgrid-1.png"
+        }
+      },
+      "why-us-inner-header": {
+        "type": "why-us-inner-header",
+        "settings": {
+          "banner_img": "shopify:\/\/shop_images\/04-why-offgrid-1.png"
+        }
+      },
+      "contact-inner-header": {
+        "type": "contact-inner-header",
+        "settings": {
+          "banner_img": "shopify:\/\/shop_images\/11-contacts-1.jpg",
+          "icon_address": "shopify:\/\/shop_images\/address_fb9eefa1-3e82-4d4a-bc49-dd43e946051e.png",
+          "address_title": "Location",
+          "address": "We operate by appointment only",
+          "icon_phone": "shopify:\/\/shop_images\/phone_e16bc058-36b8-4675-a38a-165dd738bd07.png",
+          "phone_title": "Phone Us",
+          "phone": "<a class=\"phone_number_class\" href=\"tel:1300%20244%20251\">0457 997 484<\/a>",
+          "icon_email": "shopify:\/\/shop_images\/email_8d776f73-699e-4344-b376-24357af501f1.png",
+          "email_title": "Email Us",
+          "email": "<span class=\"phone_number_class\">Fill out the form below<\/span>\n<!--<a class=\"phone_number_class\" href=\"mailto:admin@theoffgridshop.com.au\">admin@theoffgridshop.com.au<\/a>-->"
+        }
+      },
+      "contact-box": {
+        "type": "contact-box",
+        "settings": {}
+      },
+      "contact-map": {
+        "type": "contact-map",
+        "settings": {}
+      },
+      "why-us1": {
+        "type": "why-us1",
+        "blocks": {
+          "481d71dd-7b8c-4f13-ae16-5558dc7862ea": {
+            "type": "icon_blocks",
+            "settings": {
+              "icons": "shopify:\/\/shop_images\/price.png",
+              "icon_text": "Price Match",
+              "icon_desc": ""
+            }
+          },
+          "112c3f1b-b2af-46cb-85ec-5dea0099e925": {
+            "type": "icon_blocks",
+            "settings": {
+              "icons": "shopify:\/\/shop_images\/quality_7f518abd-7991-482c-bd25-198bae36e5c9.png",
+              "icon_text": "15yrs of Experience",
+              "icon_desc": ""
+            }
+          },
+          "9382b021-3c4e-4849-9a16-3b1ef10f75da": {
+            "type": "icon_blocks",
+            "settings": {
+              "icons": "shopify:\/\/shop_images\/support_66b495d8-06ee-4ee8-be97-494ecf818526.png",
+              "icon_text": "Amazing Support",
+              "icon_desc": ""
+            }
+          },
+          "9f7c5fcc-b9b8-4dfb-a178-d737f1140323": {
+            "type": "icon_blocks",
+            "settings": {
+              "icons": "shopify:\/\/shop_images\/shipping_71f72c54-2eba-475d-ad33-ddd62af626e4.png",
+              "icon_text": "Quick Shipping",
+              "icon_desc": ""
+            }
+          },
+          "4c8baf0b-8ffd-4447-8d9c-9471cb137172": {
+            "type": "icon_blocks",
+            "settings": {
+              "icons": "shopify:\/\/shop_images\/quality_237a14e8-17ce-4e19-81a9-f50644332f65.png",
+              "icon_text": "Quality First",
+              "icon_desc": ""
+            }
+          },
+          "03926aeb-633a-4b99-93a6-95cd320a8b9d": {
+            "type": "icon_blocks",
+            "settings": {
+              "icons": "shopify:\/\/shop_images\/staff_b47c55d4-57bd-427f-bfd3-da757e982f83.png",
+              "icon_text": "Friendly Staff",
+              "icon_desc": ""
+            }
+          }
+        },
+        "block_order": [
+          "481d71dd-7b8c-4f13-ae16-5558dc7862ea",
+          "112c3f1b-b2af-46cb-85ec-5dea0099e925",
+          "9382b021-3c4e-4849-9a16-3b1ef10f75da",
+          "9f7c5fcc-b9b8-4dfb-a178-d737f1140323",
+          "4c8baf0b-8ffd-4447-8d9c-9471cb137172",
+          "03926aeb-633a-4b99-93a6-95cd320a8b9d"
+        ],
+        "settings": {
+          "sub_heading": "Why Us",
+          "heading": "The Off Grid Shop",
+          "description": "Our team are passionate about getting you the best system for your energy demands and once you talk to one of our team members you will know how passionate we are.\n\nWe specialise in commercial, rural and off-grid solar systems and can supply and install Australia wide .We even do international projects.\n\nWe have installed solar on commercial businesses and off-grid homes within Australia with the focus on our community. We design advanced solar solutions that are technically & environmentally smart that will last.",
+          "why_image": "shopify:\/\/shop_images\/why-img.png"
+        }
+      },
+      "our-process-banner": {
+        "type": "our-process-banner",
+        "settings": {
+          "banner_img": "shopify:\/\/shop_images\/07-our-progress-1_5f7004da-bbb4-446c-824c-049427b978be.jpg"
+        }
+      },
+      "made-easy-section": {
+        "type": "made-easy-section",
+        "settings": {
+          "sub_heading": "5 Simple Steps",
+          "heading": "Made Easy",
+          "desc": "",
+          "video": "<iframe src=\"https:\/\/www.youtube.com\/embed\/mikzLS1qqy4\" title=\"YouTube video player\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen=\"\" width=\"100%\" height=\"500\" frameborder=\"0\"><\/iframe>"
+        }
+      },
+      "delivery-services-section": {
+        "type": "delivery-services-section",
+        "blocks": {
+          "ed64cdc6-ce71-4649-875b-0eb25fa80828": {
+            "type": "block",
+            "settings": {
+              "process_image": "shopify:\/\/shop_images\/research_3bb359ce-5bdf-4e33-90eb-dbc57c48ead7.png",
+              "process_title": "Research",
+              "process_desc": "Details coming soon"
+            }
+          },
+          "661f3141-6d9a-4e11-9509-9b949958edb8": {
+            "type": "block",
+            "settings": {
+              "process_image": "shopify:\/\/shop_images\/Bundle_2629b423-adba-4876-b462-fb315f35b7f2.png",
+              "process_title": "Choose Your Bundle or Product",
+              "process_desc": "Details coming soon"
+            }
+          },
+          "1e8c7008-f135-4502-85e7-44f5674db463": {
+            "type": "block",
+            "settings": {
+              "process_image": "shopify:\/\/shop_images\/Shipping_cf818dd0-aa94-48cc-9a6c-de5c6b4494d7.png",
+              "process_title": "Shipping & Delivery",
+              "process_desc": "Details coming soon"
+            }
+          },
+          "f9a9a573-b8cc-472d-93e2-1a8ba9b685e5": {
+            "type": "block",
+            "settings": {
+              "process_image": "shopify:\/\/shop_images\/instalment.png",
+              "process_title": "Instalation",
+              "process_desc": "Details coming soon"
+            }
+          },
+          "8beaf52e-de82-4a40-be75-749010bffddd": {
+            "type": "block",
+            "settings": {
+              "process_image": "shopify:\/\/shop_images\/Enjoy_Free_cf316e3b-42e8-4e5a-939d-424c175675f1.png",
+              "process_title": "Enjoy Free & Clean Energy",
+              "process_desc": "Details coming soon"
+            }
+          }
+        },
+        "block_order": [
+          "ed64cdc6-ce71-4649-875b-0eb25fa80828",
+          "661f3141-6d9a-4e11-9509-9b949958edb8",
+          "1e8c7008-f135-4502-85e7-44f5674db463",
+          "f9a9a573-b8cc-472d-93e2-1a8ba9b685e5",
+          "8beaf52e-de82-4a40-be75-749010bffddd"
+        ],
+        "settings": {
+          "btn_link": "https:\/\/www.theoffgridshop.com.au\/collections\/all",
+          "btn_text": "Shop Now"
+        }
+      },
+      "whos-grid-banner": {
+        "type": "whos-grid-banner",
+        "settings": {
+          "banner_img": "shopify:\/\/shop_images\/09-whos-offgrid-2.jpg"
+        }
+      },
+      "is-grid-off-section": {
+        "type": "is-grid-off-section",
+        "blocks": {
+          "6aa3e629-1c26-49e6-b77e-f77ea518db42": {
+            "type": "block",
+            "settings": {
+              "ser_icon": "shopify:\/\/shop_images\/No_More_Electricity_Bills.png",
+              "service_title": "No More Electricity Bills",
+              "service_desc": "Details coming soon"
+            }
+          },
+          "5e268c53-206d-465d-8067-4586ad2a27d7": {
+            "type": "block",
+            "settings": {
+              "ser_icon": "shopify:\/\/shop_images\/Help_Earth.png",
+              "service_title": "Help Earth",
+              "service_desc": "Details coming soon"
+            }
+          },
+          "1b1a9417-f002-467f-8a12-2d38670d7c3f": {
+            "type": "block",
+            "settings": {
+              "ser_icon": "shopify:\/\/shop_images\/Clean_Free_Energy.png",
+              "service_title": "Clean & Free Energy",
+              "service_desc": "Details coming soon"
+            }
+          },
+          "f58c22cd-7b4c-4a2e-aed4-aa0c3975bc40": {
+            "type": "block",
+            "settings": {
+              "ser_icon": "shopify:\/\/shop_images\/Rural_Area.png",
+              "service_title": "Rural Area",
+              "service_desc": "Details coming soon"
+            }
+          }
+        },
+        "block_order": [
+          "6aa3e629-1c26-49e6-b77e-f77ea518db42",
+          "5e268c53-206d-465d-8067-4586ad2a27d7",
+          "1b1a9417-f002-467f-8a12-2d38670d7c3f",
+          "f58c22cd-7b4c-4a2e-aed4-aa0c3975bc40"
+        ],
+        "settings": {
+          "sub_title": "All You need to know",
+          "title1": "Is Off Grid For You?",
+          "description": "Save money. - Be more independent - Be blackout proof. When you have a reliable grid the best battery you can use is the one you already have - your hot water system.",
+          "whos_image": "shopify:\/\/shop_images\/09-whos-offgrid-1.png"
+        }
+      },
+      "off-grid-today": {
+        "type": "off-grid-today",
+        "settings": {
+          "go_off_image": "shopify:\/\/shop_images\/why-off-grid_364af28b-4276-434e-8378-91ca64659532.png",
+          "go_off_heading": "Ready to Buy",
+          "go_off_subheading": "Go Off Grid Today",
+          "btn_link": "https:\/\/www.theoffgridshop.com.au\/collections\/all",
+          "btn_text": "Shop Now"
+        }
+      },
+      "faq-section": {
+        "type": "faq-section",
+        "blocks": {
+          "8cd7fed7-903b-41ba-8e98-b85bf3e2c97c": {
+            "type": "block",
+            "settings": {
+              "faq_heading": "Faq's section coming soon",
+              "faq_desc": "Coming soon"
+            }
+          }
+        },
+        "block_order": [
+          "8cd7fed7-903b-41ba-8e98-b85bf3e2c97c"
+        ],
+        "settings": {
+          "title": "FAQ’s"
+        }
+      },
+      "call-to-section": {
+        "type": "call-to-section",
+        "settings": {
+          "icon_cta": "shopify:\/\/shop_images\/84-icon.png",
+          "desc_text": "NEED HELP",
+          "heading": "Nor Sure What To Get",
+          "btn_link": "#",
+          "btn_text": "Let's Chat"
+        }
+      },
+      "custom-fields-homepage": {
+        "type": "custom-fields-homepage",
+        "settings": {}
+      },
+      "blog-inner-header": {
+        "type": "blog-inner-header",
+        "settings": {
+          "banner_img": "shopify:\/\/shop_images\/10-learnign-resources-1.png"
+        }
+      },
+      "blog-section": {
+        "type": "blog-section",
+        "settings": {}
+      },
+      "learning-resources-section": {
+        "type": "learning-resources-section",
+        "settings": {
+          "sub_title": "Latest Article & Videos",
+          "main_title": "News, Tips, Tutorials & More",
+          "blog_show_date": true
+        }
+      },
+      "blog-template": {
+        "type": "blog-template",
+        "settings": {
+          "layout": "list",
+          "blog_show_author": true,
+          "blog_show_date": true
+        }
+      },
+      "price-banne-header": {
+        "type": "price-banne-header",
+        "settings": {
+          "banner_img": "shopify:\/\/shop_images\/13-price-match-1.jpg"
+        }
+      },
+      "terms-of-service": {
+        "type": "terms-of-service",
+        "blocks": {
+          "b0b96352-42d1-46f2-8156-ce8bff534ab3": {
+            "type": "block",
+            "settings": {
+              "list_text": "Offers which include cash back, bonus, bulk purchase, quantity limits or packages."
+            }
+          },
+          "5ec27652-b917-4ebb-811c-ebc81f50e653": {
+            "type": "block",
+            "settings": {
+              "list_text": "Pricing with included delivery or installation."
+            }
+          },
+          "7b5e53f1-5db6-471e-9472-e11e13b910f0": {
+            "type": "block",
+            "settings": {
+              "list_text": "Offers not available to the general public - including trade, special event, club or membership offers."
+            }
+          },
+          "409aa0d5-462d-4957-b75d-b96470619074": {
+            "type": "block",
+            "settings": {
+              "list_text": "Clearance, seconds, refurbished, ex-demonstration or display products."
+            }
+          },
+          "e8019a85-9893-4de5-b3fb-a9a761fbc85a": {
+            "type": "block",
+            "settings": {
+              "list_text": "Products shipped from or sold by third-party sellers on marketplace, auction or classifieds websites."
+            }
+          },
+          "d6121c96-f115-4fa3-92fc-cbb80798be03": {
+            "type": "block",
+            "settings": {
+              "list_text": "Products supplied through unauthorised distributors (known as ‘grey market’ items) or delivered directly to customers from an overseas distributor."
+            }
+          },
+          "b6154672-83b9-4068-9e32-c8520ffeec42": {
+            "type": "block",
+            "settings": {
+              "list_text": "Pricing errors."
+            }
+          },
+          "ce7c163f-07b9-488a-a257-01db3c87681c": {
+            "type": "block",
+            "settings": {
+              "list_text": "Products with pricing set significantly lower than the recommended retail price or market value."
+            }
+          }
+        },
+        "block_order": [
+          "b0b96352-42d1-46f2-8156-ce8bff534ab3",
+          "5ec27652-b917-4ebb-811c-ebc81f50e653",
+          "7b5e53f1-5db6-471e-9472-e11e13b910f0",
+          "409aa0d5-462d-4957-b75d-b96470619074",
+          "e8019a85-9893-4de5-b3fb-a9a761fbc85a",
+          "d6121c96-f115-4fa3-92fc-cbb80798be03",
+          "b6154672-83b9-4068-9e32-c8520ffeec42",
+          "ce7c163f-07b9-488a-a257-01db3c87681c"
+        ],
+        "settings": {
+          "sub_heading": "Terms of service",
+          "heading": "Price Match",
+          "p_desc": "How do I request a Price Match?",
+          "span_desc": "Simply present proof of the competitor’s advertised price for the identical product prior to your purchase to <a class=\"anchor-tag\" href=\"mailto:admin@theoffgridshop.com.au\">admin@theoffgridshop.com.au<\/a> <br><br>\nOnce your price match request is verified and the competitor’s product is confirmed as being in stock and available for immediate sale using the same payment method, we will happily match the price for you.",
+          "ul_headiing": "What are the exclusions?",
+          "price_image": "shopify:\/\/shop_images\/13-price-match-2.png"
+        }
+      },
+      "16137166207e591315": {
+        "type": "what-you-need-backup",
+        "disabled": true,
+        "settings": {
+          "sub_title": "What You Need",
+          "title1": "All About Off Grid"
+        }
+      },
+      "collection-template": {
+        "type": "collection-template",
+        "settings": {
+          "layout": "grid",
+          "grid": 3,
+          "rows": 2,
+          "show_collection_image": true,
+          "show_vendor": false,
+          "sort_enable": true,
+          "tags_enable": true
+        }
+      },
+      "warranty-banner": {
+        "type": "warranty-banner",
+        "settings": {
+          "banner_img": "shopify:\/\/shop_images\/12-warranty-1.png"
+        }
+      },
+      "warranty-section": {
+        "type": "warranty-section",
+        "settings": {
+          "sub_heading": "We Got You",
+          "heading": "Choose Below",
+          "warranty_desc": ""
+        }
+      },
+      "product-template": {
+        "type": "product-template",
+        "settings": {
+          "show_quantity_selector": true,
+          "social_url1": "https:\/\/www.facebook.com\/24hoursolarpower",
+          "social_url2": "https:\/\/www.instagram.com\/",
+          "social_url3": "https:\/\/twitter.com\/",
+          "social_url4": "https:\/\/in.pinterest.com\/",
+          "icon": "shopify:\/\/shop_images\/register-small.png",
+          "title": "Register or Claim",
+          "btn_link": "shopify:\/\/pages\/warranty",
+          "btn_text": "Warranty",
+          "icon2": "shopify:\/\/shop_images\/hand-settings.png",
+          "title2": "How it Works",
+          "btn_link2": "shopify:\/\/pages\/delivery-policy",
+          "btn_text2": "Delivery Policy",
+          "show_vendor": false,
+          "enable_payment_button": true,
+          "show_share_buttons": true,
+          "media_size": "medium",
+          "enable_image_zoom": true,
+          "enable_video_looping": false
+        }
+      },
+      "product-recommendations": {
+        "type": "product-recommendations",
+        "settings": {}
+      },
+      "why-off-grid-service-icon": {
+        "type": "why-off-grid-service-icon",
+        "blocks": {
+          "2e5a136e-2115-4e19-874a-0329c167a3b7": {
+            "type": "icon",
+            "settings": {
+              "service_icon": "shopify:\/\/shop_images\/why-us.png",
+              "service_heading": "Why Us",
+              "icon_url": "shopify:\/\/pages\/why-us"
+            }
+          },
+          "687372f7-baca-4b5a-8020-1ffd4b3405ae": {
+            "type": "icon",
+            "settings": {
+              "service_icon": "shopify:\/\/shop_images\/our-process_a490d624-bb62-4aa3-aa32-77ce68cb5da1.png",
+              "service_heading": "Our Process",
+              "icon_url": "shopify:\/\/pages\/our-process"
+            }
+          },
+          "47b76922-4406-4db0-9d1f-791eae4bd67c": {
+            "type": "icon",
+            "settings": {
+              "service_icon": "shopify:\/\/shop_images\/Who_s_Grid_Off_For.png",
+              "service_heading": "Who's Off Grid For",
+              "icon_url": "shopify:\/\/pages\/whos-off-grid-for"
+            }
+          }
+        },
+        "block_order": [
+          "2e5a136e-2115-4e19-874a-0329c167a3b7",
+          "687372f7-baca-4b5a-8020-1ffd4b3405ae",
+          "47b76922-4406-4db0-9d1f-791eae4bd67c"
+        ],
+        "settings": {}
+      },
+      "price-service-icon-section": {
+        "type": "price-service-icon-section",
+        "blocks": {
+          "d5ba9cd9-ff2e-4e15-8aea-60e060ee039e": {
+            "type": "icon",
+            "settings": {
+              "service_icon": "shopify:\/\/shop_images\/why-off-grid_9045e877-00a6-4de5-99f8-8d95a396a0de.png",
+              "service_heading": "Why Off Grid",
+              "icon_url": "shopify:\/\/pages\/why-off-grid"
+            }
+          },
+          "f1c51423-fe73-4f74-bd1f-7a4f9e770f88": {
+            "type": "icon",
+            "settings": {
+              "service_icon": "shopify:\/\/shop_images\/why-us.png",
+              "service_heading": "Why Us",
+              "icon_url": "shopify:\/\/pages\/why-us"
+            }
+          },
+          "a7db9e00-8743-4f7f-8dce-0c80fef67a5e": {
+            "type": "icon",
+            "settings": {
+              "service_icon": "shopify:\/\/shop_images\/our-process_a490d624-bb62-4aa3-aa32-77ce68cb5da1.png",
+              "service_heading": "Our Process",
+              "icon_url": "shopify:\/\/pages\/our-process"
+            }
+          }
+        },
+        "block_order": [
+          "d5ba9cd9-ff2e-4e15-8aea-60e060ee039e",
+          "f1c51423-fe73-4f74-bd1f-7a4f9e770f88",
+          "a7db9e00-8743-4f7f-8dce-0c80fef67a5e"
+        ],
+        "settings": {}
+      },
+      "whos-off-grid-service-icon-section": {
+        "type": "whos-off-grid-service-icon-section",
+        "blocks": {
+          "6f1c310c-ec5f-4c69-8b5f-5401ed1013be": {
+            "type": "icon",
+            "settings": {
+              "service_icon": "shopify:\/\/shop_images\/why-off-grid_9045e877-00a6-4de5-99f8-8d95a396a0de.png",
+              "service_heading": "Why Off Grid",
+              "icon_url": "shopify:\/\/pages\/why-off-grid"
+            }
+          },
+          "a87620d0-f0a1-4801-9a04-b87faa5e1397": {
+            "type": "icon",
+            "settings": {
+              "service_icon": "shopify:\/\/shop_images\/why-us.png",
+              "service_heading": "Why Us",
+              "icon_url": "shopify:\/\/pages\/why-us"
+            }
+          },
+          "e5b3a78e-df39-4e4d-9ad3-a25d8dfd5d48": {
+            "type": "icon",
+            "settings": {
+              "service_icon": "shopify:\/\/shop_images\/our-process_a490d624-bb62-4aa3-aa32-77ce68cb5da1.png",
+              "service_heading": "Our Process",
+              "icon_url": "shopify:\/\/pages\/our-process"
+            }
+          }
+        },
+        "block_order": [
+          "6f1c310c-ec5f-4c69-8b5f-5401ed1013be",
+          "a87620d0-f0a1-4801-9a04-b87faa5e1397",
+          "e5b3a78e-df39-4e4d-9ad3-a25d8dfd5d48"
+        ],
+        "settings": {}
+      },
+      "why-us-service-icon": {
+        "type": "why-us-service-icon",
+        "blocks": {
+          "ca9100d9-5f08-4fe0-a873-994ee1d7ea1c": {
+            "type": "icon",
+            "settings": {
+              "service_icon": "shopify:\/\/shop_images\/why-off-grid_9045e877-00a6-4de5-99f8-8d95a396a0de.png",
+              "service_heading": "Why Off Grid",
+              "icon_url": "shopify:\/\/pages\/why-off-grid"
+            }
+          },
+          "85891abc-a7d1-4067-b129-65843a10222c": {
+            "type": "icon",
+            "settings": {
+              "service_icon": "shopify:\/\/shop_images\/our-process_a490d624-bb62-4aa3-aa32-77ce68cb5da1.png",
+              "service_heading": "Our Process",
+              "icon_url": "shopify:\/\/pages\/our-process"
+            }
+          },
+          "04875c06-41db-4c43-80a6-44b97545af40": {
+            "type": "icon",
+            "settings": {
+              "service_icon": "shopify:\/\/shop_images\/Who_s_Grid_Off_For.png",
+              "service_heading": "Who's Off Grid For",
+              "icon_url": "shopify:\/\/pages\/whos-off-grid-for"
+            }
+          }
+        },
+        "block_order": [
+          "ca9100d9-5f08-4fe0-a873-994ee1d7ea1c",
+          "85891abc-a7d1-4067-b129-65843a10222c",
+          "04875c06-41db-4c43-80a6-44b97545af40"
+        ],
+        "settings": {}
+      },
+      "our-process-service-section": {
+        "type": "our-process-service-section",
+        "blocks": {
+          "88531559-28db-495a-8eca-9ae8f6ea76b1": {
+            "type": "icon",
+            "settings": {
+              "service_icon": "shopify:\/\/shop_images\/why-off-grid_9045e877-00a6-4de5-99f8-8d95a396a0de.png",
+              "service_heading": "Why Off Grid",
+              "icon_url": "shopify:\/\/pages\/why-off-grid"
+            }
+          },
+          "36a91979-c9e1-41ee-a22a-2cd84d3896ff": {
+            "type": "icon",
+            "settings": {
+              "service_icon": "shopify:\/\/shop_images\/why-us.png",
+              "service_heading": "Why Us",
+              "icon_url": "shopify:\/\/pages\/why-us"
+            }
+          },
+          "b5b13b70-544d-4325-825d-f4fdb009b562": {
+            "type": "icon",
+            "settings": {
+              "service_icon": "shopify:\/\/shop_images\/Who_s_Grid_Off_For.png",
+              "service_heading": "Who's Off Grid For",
+              "icon_url": "shopify:\/\/pages\/whos-off-grid-for"
+            }
+          }
+        },
+        "block_order": [
+          "88531559-28db-495a-8eca-9ae8f6ea76b1",
+          "36a91979-c9e1-41ee-a22a-2cd84d3896ff",
+          "b5b13b70-544d-4325-825d-f4fdb009b562"
+        ],
+        "settings": {}
+      },
+      "list-collections-template": {
+        "type": "list-collections-template",
+        "settings": {
+          "display_type": "all",
+          "sort": "alphabetical",
+          "grid": 3
+        }
+      },
+      "collection-template-new": {
+        "type": "collection-template-new",
+        "settings": {
+          "layout": "grid",
+          "grid": 4,
+          "rows": 2,
+          "show_collection_image": true,
+          "show_vendor": false,
+          "sort_enable": true,
+          "tags_enable": true
+        }
+      },
+      "you-might-like-section": {
+        "type": "you-might-like-section",
+        "settings": {
+          "sub_title": "More Courses",
+          "main_title": "You Might Also Like",
+          "btn_link": "shopify:\/\/collections\/courses",
+          "btn_text": "See All Courses"
+        }
+      },
+      "shipping-inner-header": {
+        "type": "shipping-inner-header",
+        "settings": {
+          "banner_img": "shopify:\/\/shop_images\/shipping_66e5e6e1-dc47-4764-bd63-0b718d96cec9.png"
+        }
+      },
+      "testimonial-inner-header": {
+        "type": "testimonial-inner-header",
+        "settings": {
+          "banner_img": "shopify:\/\/shop_images\/10-learnign-resources-1.png"
+        }
+      },
+      "testimonail-section": {
+        "type": "testimonail-section",
+        "settings": {}
+      },
+      "shipping-information": {
+        "type": "shipping-information",
+        "blocks": {
+          "953f4874-6b24-41d7-bd5c-8d0f3cc7b7a1": {
+            "type": "block",
+            "settings": {
+              "list_text": "Once payment has been cleared, we will contact you within 48 hours with shipping details."
+            }
+          },
+          "90c602e4-41d5-46b8-9379-49a6f907c039": {
+            "type": "block",
+            "settings": {
+              "list_text": "If you have purchased a pre-wired item, call our shop prior to purchasing to discuss delivery times."
+            }
+          }
+        },
+        "block_order": [
+          "953f4874-6b24-41d7-bd5c-8d0f3cc7b7a1",
+          "90c602e4-41d5-46b8-9379-49a6f907c039"
+        ],
+        "settings": {
+          "heading": "DELIVERY INFORMATION"
+        }
+      },
+      "whatyouneed-inner-header": {
+        "type": "whatyouneed-inner-header",
+        "settings": {
+          "banner_img": "shopify:\/\/shop_images\/13-price-match-1.jpg"
+        }
+      }
+    },
+    "content_for_index": [
+      "hero-1",
+      "feature-row",
+      "feature-columns",
+      "collection",
+      "hero-2",
+      "quotes",
+      "image-bar",
+      "1612531463bc65e1af",
+      "1612765004a06192bf",
+      "1613026359b4038eee",
+      "16137166207e591315",
+      "161286138514536197",
+      "16128719839a2dd61e",
+      "161293783809cb24d8",
+      "161295820330897eb6",
+      "1613124435e4967a7f"
+    ]
+  },
+  "presets": {
+    "Default": {
+      "sections": {
+        "header": {
+          "type": "header",
+          "settings": {}
+        },
+        "hero-1": {
+          "type": "hero",
+          "settings": {
+            "hero_size": "large",
+            "text_size": "large"
+          }
+        },
+        "feature-row": {
+          "type": "feature-row",
+          "settings": {}
+        },
+        "feature-columns": {
+          "type": "feature-columns",
+          "blocks": {
+            "feature-columns-0": {
+              "type": "text_block",
+              "settings": {}
+            },
+            "feature-columns-1": {
+              "type": "text_block",
+              "settings": {}
+            },
+            "feature-columns-2": {
+              "type": "text_block",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "feature-columns-0",
+            "feature-columns-1",
+            "feature-columns-2"
+          ],
+          "settings": {
+            "title": ""
+          }
+        },
+        "collection": {
+          "type": "collection",
+          "settings": {
+            "grid": 4
+          }
+        },
+        "hero-2": {
+          "type": "hero",
+          "settings": {
+            "text_size": "large"
+          }
+        },
+        "quotes": {
+          "type": "quotes",
+          "blocks": {
+            "quotes-0": {
+              "type": "quote",
+              "settings": {}
+            },
+            "quotes-1": {
+              "type": "quote",
+              "settings": {}
+            },
+            "quotes-2": {
+              "type": "quote",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "quotes-0",
+            "quotes-1",
+            "quotes-2"
+          ],
+          "settings": {
+            "title": ""
+          }
+        },
+        "image-bar": {
+          "type": "image-bar",
+          "blocks": {
+            "image-bar-0": {
+              "type": "image",
+              "settings": {}
+            },
+            "image-bar-1": {
+              "type": "image",
+              "settings": {}
+            },
+            "image-bar-2": {
+              "type": "image",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "image-bar-0",
+            "image-bar-1",
+            "image-bar-2"
+          ],
+          "settings": {}
+        },
+        "footer": {
+          "type": "footer",
+          "blocks": {
+            "footer-0": {
+              "type": "link_list",
+              "settings": {}
+            },
+            "footer-1": {
+              "type": "newsletter",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "footer-0",
+            "footer-1"
+          ],
+          "settings": {
+            "show_payment_icons": true
+          }
+        }
+      },
+      "content_for_index": [
+        "hero-1",
+        "feature-row",
+        "feature-columns",
+        "collection",
+        "hero-2",
+        "quotes",
+        "image-bar"
+      ]
+    },
+    "Light": {
+      "color_text": "#162950",
+      "color_body_text": "#6d6d6d",
+      "color_sale_text": "#DA2F0C",
+      "color_borders": "#e4e4e4",
+      "color_button": "#DA2F0C",
+      "color_button_text": "#ffffff",
+      "color_small_button_text_border": "#162950",
+      "color_text_field": "#ffffff",
+      "color_text_field_text": "#162950",
+      "color_text_field_border": "#909090",
+      "color_image_overlay_text": "#ffffff",
+      "color_image_overlay": "#3d3d3d",
+      "image_overlay_opacity": 40,
+      "color_body_bg": "#f8f8f8",
+      "type_header_font": "muli_n6",
+      "type_header_base_size": 26,
+      "type_base_font": "muli_n4",
+      "type_base_size": 18,
+      "share_facebook": true,
+      "share_twitter": true,
+      "share_pinterest": true,
+      "social_twitter_link": "",
+      "social_facebook_link": "",
+      "social_pinterest_link": "",
+      "social_instagram_link": "",
+      "social_tumblr_link": "",
+      "social_snapchat_link": "",
+      "social_youtube_link": "",
+      "social_vimeo_link": "",
+      "favicon": "",
+      "checkout_header_image": "",
+      "checkout_logo_image": "",
+      "checkout_logo_position": "left",
+      "checkout_logo_size": "small",
+      "checkout_body_background_image": "",
+      "checkout_body_background_color": "#ffffff",
+      "checkout_input_background_color_mode": "white",
+      "checkout_sidebar_background_image": "",
+      "checkout_sidebar_background_color": "#e8f3f6",
+      "checkout_heading_font": "Roboto",
+      "checkout_body_font": "Source Sans Pro",
+      "checkout_accent_color": "#1990c6",
+      "checkout_button_color": "#23314e",
+      "checkout_error_color": "#ff6d6d",
+      "sections": {
+        "header": {
+          "type": "header",
+          "settings": {
+            "align_logo": "left",
+            "logo": "",
+            "logo_max_width": 135,
+            "main_linklist": "main-menu",
+            "message": true,
+            "color_bg": "#162950",
+            "color_text": "#ffffff"
+          }
+        },
+        "hero": {
+          "type": "hero",
+          "settings": {
+            "alignment": "center",
+            "hero_size": "x-large",
+            "text_size": "large"
+          }
+        },
+        "slideshow": {
+          "type": "slideshow",
+          "blocks": {
+            "slideshow-0": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "alignment": "center center"
+              }
+            },
+            "1492095993817": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "alignment": "center"
+              }
+            }
+          },
+          "block_order": [
+            "slideshow-0",
+            "1492095993817"
+          ],
+          "settings": {
+            "slideshow_height": "medium",
+            "text_size": "medium",
+            "autorotate": false,
+            "autorotate_speed": 5
+          }
+        },
+        "featured-collections": {
+          "type": "collection",
+          "settings": {
+            "grid": 3,
+            "rows": 1,
+            "show_vendor": true,
+            "show_view_all": true
+          }
+        },
+        "product-template": {
+          "type": "product-template",
+          "settings": {
+            "show_quantity_selector": false,
+            "show_vendor": false,
+            "show_share_buttons": true,
+            "media_size": "medium",
+            "enable_image_zoom": true,
+            "enable_video_looping": false
+          }
+        },
+        "collection-template": {
+          "type": "collection-template",
+          "settings": {
+            "layout": "grid",
+            "grid": 2,
+            "rows": 2,
+            "show_collection_image": true,
+            "show_vendor": false,
+            "sort_enable": true,
+            "tags_enable": true
+          }
+        },
+        "1492033809691": {
+          "type": "map",
+          "settings": {}
+        },
+        "1492033877875": {
+          "type": "quotes",
+          "blocks": {
+            "1492033877875-0": {
+              "type": "quote",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "1492033877875-0"
+          ],
+          "settings": {}
+        },
+        "1492033924902": {
+          "type": "custom-content",
+          "blocks": {
+            "1492033924902-0": {
+              "type": "text",
+              "settings": {
+                "width": "100%",
+                "alignment": "center",
+                "align_text": "center"
+              }
+            }
+          },
+          "block_order": [
+            "1492033924902-0"
+          ],
+          "settings": {
+            "title": ""
+          }
+        },
+        "1492096252560": {
+          "type": "collection-list",
+          "blocks": {
+            "1492096252560-0": {
+              "type": "featured_collection",
+              "settings": {}
+            },
+            "1492096252560-1": {
+              "type": "featured_collection",
+              "settings": {}
+            },
+            "1492096252560-2": {
+              "type": "featured_collection",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "1492096252560-0",
+            "1492096252560-1",
+            "1492096252560-2"
+          ],
+          "settings": {
+            "grid": 3
+          }
+        },
+        "blog-template": {
+          "type": "blog-template",
+          "settings": {
+            "layout": "grid",
+            "blog_show_author": true,
+            "blog_show_date": false
+          }
+        },
+        "article-template": {
+          "type": "article-template",
+          "settings": {
+            "blog_show_author": true,
+            "blog_show_date": true,
+            "show_share_buttons": true
+          }
+        },
+        "cart-template": {
+          "type": "cart-template",
+          "settings": {
+            "cart_notes_enable": false
+          }
+        },
+        "footer": {
+          "type": "footer",
+          "blocks": {
+            "link_list": {
+              "type": "link_list",
+              "settings": {}
+            },
+            "text": {
+              "type": "text",
+              "settings": {}
+            },
+            "newsletter": {
+              "type": "newsletter",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "link_list",
+            "text",
+            "newsletter"
+          ],
+          "settings": {
+            "color_footer_bg": "#f8f8f8",
+            "color_footer_text": "#6d6d6d"
+          }
+        }
+      },
+      "content_for_index": [
+        "hero",
+        "featured-collections",
+        "slideshow",
+        "1492033924902",
+        "1492096252560",
+        "1492033877875",
+        "1492033809691"
+      ]
+    }
+  }
+}

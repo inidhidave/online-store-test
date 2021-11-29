@@ -1,0 +1,43 @@
+{% unless template == 'index' or template == 'list-collections' %}
+<ul class="breadcrumbs" role="navigation" aria-label="breadcrumbs">
+  <li><a href="/" title="Home">Home</a></li>
+  {% if template contains 'page' %}
+<!--     <span aria-hidden="true">&rsaquo;</span> -->
+  <li><span>{{ page.title }}</span></li>
+  {% elsif template contains 'product' %}
+    {% if collection.url %}
+<!--       <span aria-hidden="true">&rsaquo;</span> -->
+  <li>{{ collection.title | link_to: collection.url }}</li>
+    {% endif %}
+<!--     <span aria-hidden="true">&rsaquo;</span> -->
+  <li> <span>{{ product.title }}</span></li>
+  {% elsif template contains 'collection' and collection.handle %}
+<!--     <span aria-hidden="true">&rsaquo;</span> -->
+    {% if current_tags %}
+      {% capture url %}/collections/{{ collection.handle }}{% endcapture %}
+  <li>{{ collection.title | link_to: url }}</li>
+<!--       <span aria-hidden="true">&rsaquo;</span> -->
+  <li><span>{{ current_tags | join: " + " }}</span></li>
+    {% else %}
+  <li><span>{{ collection.title }}</span></li>
+    {% endif %}
+  {% elsif template == 'blog' %}
+<!--     <span aria-hidden="true">&rsaquo;</span> -->
+    {% if current_tags %}
+  <li>{{ blog.title | link_to: blog.url }}</li>
+<!--   <li><span aria-hidden="true">&rsaquo;</span></li> -->
+  <li><span>{{ current_tags | join: " + " }}</span></li>
+    {% else %}
+  <li><span>{{ blog.title }}</span></li>
+    {% endif %}
+  {% elsif template == 'article' %}
+<!--     <span aria-hidden="true">&rsaquo;</span> -->
+  <li>{% if blog.title == "Article" %} {{ "Learning Resources" | link_to: '/pages/learning-resources' }} {% else %} {{ blog.title | link_to: blog.url }}  {% endif %}</li>
+<!--     <span aria-hidden="true">&rsaquo;</span> -->
+  <li><span>{{ article.title }}</span></li>
+  {% else %}
+<!--    <span aria-hidden="true">&rsaquo;</span> -->
+  <li><span>{{ page_title }}</span></li>
+  {% endif %}
+</ul>
+{% endunless %}

@@ -1,0 +1,16 @@
+{% if shop.metafields.custom_fields["product_reference"] != blank %}
+  <div class="custom-field custom-field__product-reference custom-field__type--collection-reference">
+    <h3 class="custom-field--title">Product reference</h3>
+    <div class="custom-field--value">  
+      {% assign collection_refs = shop.metafields.custom_fields["product_reference"] | split: "|" %}
+      <ul>
+        {% for collection_handle in collection_refs %}
+          <li>
+            {% assign collection_ref = collections[collection_handle] %}
+            {{ collection_ref.title | link_to: collection_ref.url }}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+{% endif %}

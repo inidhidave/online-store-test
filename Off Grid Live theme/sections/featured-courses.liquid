@@ -1,0 +1,89 @@
+<section class="clearfix featured-courses-block space-100 space-85" id="featured-section">
+    <h6 class="sub-title">{{ section.settings.sub_title }}</h6>
+    <h2 class="main-title">{{ section.settings.main_title }}</h2>
+<div class="container">
+  <div class="more-courses"> <a href="{{ section.settings.btn_link }}">{{ section.settings.btn_text }}</a></div>
+    <div class="row"> 
+  {% if shop.metafields.custom_fields["featured_courses"] != blank %}
+  <!-- <div class="custom-field custom-field__featured-courses custom-field__type--product-reference">
+    <h3 class="custom-field--title">Featured Courses</h3>
+    <div class="custom-field--value">   -->
+    {% assign product_refs = shop.metafields.custom_fields["featured_courses"] | split: "|" %}
+    {% for product_handle in product_refs %}
+      
+<!--       <a href="{{product_ref.url}}">  -->
+      <div class="col-md-4">
+        {%comment%}
+          <!-- <ul class="box-design">
+
+            <li class="save-box">
+              {% assign product_ref = all_products[product_handle] %}
+              {{ product_ref.title | link_to: product_ref.url }}
+            </li>
+
+        </ul> -->
+        {%endcomment%}
+        
+        {% assign product_ref = all_products[product_handle] %}
+        {%- assign current_variant = product_ref.selected_or_first_available_variant -%}
+        {%- assign compare_at_price = current_variant.compare_at_price -%}
+  {%- assign price = product_ref.price -%}
+  {%- assign total_saving_price = compare_at_price | minus: price -%}
+       <a href="{{product_ref.url}}">
+         <div class="box-design">
+                <div class="save-box">
+                  <span>Save <em> {{ total_saving_price | money }}</em></span>
+                </div>
+                <img src="{{product_ref | img_url: '400x300'}}">
+                <div class="box-title">
+                    <h3>{{ product_ref.title }}</h3>
+                </div>
+            </div>
+        </a>
+      </div>
+<!--         </a> -->
+      
+    {% endfor %}
+  </div>
+{% endif %}
+
+
+    </div>
+<!--     </div>
+  </div> -->
+</section>
+
+
+{% schema %}
+{
+  "name": "Featured Courses",
+  "settings": [
+    {
+		"type": "text",
+		"id": "sub_title",
+		"label": "Sub Title"
+	},
+	{
+		"type": "text",
+		"id": "main_title",
+		"label": "Main Title"
+	},
+	{
+        "id": "btn_link",
+        "type": "url",
+        "label": "Button URL"
+    },
+    {
+        "id": "btn_text",
+        "type": "text",
+        "label": "Button text"
+    }
+  ],
+  "presets": [
+    {
+      "name": "featured Courses",
+      "category": "courses"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,181 @@
+<div class="inner-container">
+  
+ {% for block in section.blocks %}
+<div class="row">
+    {% assign evens = forloop.index | modulo: 2 %}
+    {%if evens == 1 %}
+
+        <div class="col-md-6">
+            <div class="img-box-services">
+                <img src="{{ block.settings.process_image | img_url: 'master' }}">
+            </div>
+        </div>
+        <div class="col-md-6 delivery-content-group">
+            <div class="dots-border">
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li><img src=" //cdn.shopify.com/s/files/1/0039/1567/7745/t/3/assets/78-icon.svg" width="35"></li>
+                </ul>
+            </div>
+            <div>
+                <div class="delivery-services-content">
+                    <h3>{{ block.settings.process_title }} </h3>
+                    <span>{{ block.settings.process_desc }}
+                    </span>
+                </div>
+            </div>
+        </div>
+    {% else %}
+        <div class="col-md-6 delivery-content-group">
+            <div class="dots-border">
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li><img src=" //cdn.shopify.com/s/files/1/0039/1567/7745/t/3/assets/78-icon.svg" width="35"></li>
+                </ul>
+            </div>
+            <div>
+                <div class="delivery-services-content">
+                    <h3>{{ block.settings.process_title }} </h3>
+                    <span>{{ block.settings.process_desc }}
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="img-box-services">
+                <img src="{{ block.settings.process_image | img_url: 'master' }}">
+            </div>
+        </div>
+    {% endif %}
+</div>
+{% endfor %}
+   
+<!-- <div class="row">
+<div class="col-md-6 order-1 order-md-2"><div class="img-box-services"><img src="//cdn.shopify.com/s/files/1/0039/1567/7745/t/3/assets/bundle.png"> </div></div>
+<div class="col-md-6 order-2 order-md-1 delivery-content-group">
+<div class="dots-border">
+      <ul>
+        <li></li>
+        <li></li>
+        <li><img src="//cdn.shopify.com/s/files/1/0039/1567/7745/t/3/assets/78-icon.svg" width="35"></li>
+      </ul>
+    </div>
+    <div class="delivery-services-content">
+    <h4>Choose Your Bundle or Product</h4>
+    <span>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elit.
+      </span>
+    </div>
+</div>
+</div> -->
+  
+<!-- <div class="row">
+  <div class="col-md-6"><div class="img-box-services"><img src="//cdn.shopify.com/s/files/1/0039/1567/7745/t/3/assets/66-icon.svg"></div></div>
+<div class="col-md-6 delivery-content-group">
+<div class="dots-border">
+      <ul>
+        <li></li>
+        <li></li>
+        <li><img src="//cdn.shopify.com/s/files/1/0039/1567/7745/t/3/assets/78-icon.svg" width="35"></li>
+      </ul>
+    </div>
+    <div class="delivery-services-content">
+    <h4>Shipping & Delivery</h4>
+    <span>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elit.
+      </span>
+    </div>
+</div>
+</div> -->
+  
+<!-- <div class="row">
+<div class="col-md-6 order-1 order-md-2"><div class="img-box-services"><img src="//cdn.shopify.com/s/files/1/0039/1567/7745/t/3/assets/51-icon.svg"></div> </div>
+<div class="col-md-6 order-2 order-md-1 delivery-content-group">
+<div class="dots-border">
+      <ul>
+        <li></li>
+        <li></li>
+        <li><img src="//cdn.shopify.com/s/files/1/0039/1567/7745/t/3/assets/78-icon.svg" width="35"></li>
+      </ul>
+    </div>
+    <div class="delivery-services-content">
+    <h4>Instalation</h4>
+    <span>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elit.
+      </span>
+    </div>
+</div>
+</div> -->
+  
+<!-- <div class="row">
+  <div class="col-md-6"><div class="img-box-services"><img src="//cdn.shopify.com/s/files/1/0039/1567/7745/t/3/assets/68-icon.svg"></div></div>
+<div class="col-md-6 delivery-content-group">
+<div class="dots-border">
+      <ul>
+        <li></li>
+        <li></li>
+        <li><img src="//cdn.shopify.com/s/files/1/0039/1567/7745/t/3/assets/78-icon.svg" width="35"></li>
+      </ul>
+    </div>
+    <div class="delivery-services-content">
+    <h4>Enjoy Free & Clean Energy</h4>
+    <span>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elit.
+      </span>
+    </div>
+</div>
+</div> -->
+  
+  
+  <div class="btn-area">
+    <a class="secondary-btn" href="{{ section.settings.btn_link }}">{{ section.settings.btn_text }} </a>
+  </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Delivery Service Section",
+    "settings": [
+	{
+       "id": "btn_link",
+       "type": "url",
+       "label": "Button URL"
+    },
+    {
+       "id": "btn_text",
+       "type": "text",
+       "label": "Button text"
+    }
+  ],
+	
+  "blocks": [
+		{
+			"type": "block",
+			"name": "Image-Content Block",
+			"settings": [
+				{
+					"type": "image_picker",
+					"id": "process_image",
+					"label": "Process Image"
+				},
+				{
+					"type": "text",
+					"id": "process_title",
+					"label": "Process Title"
+				},
+				{
+					"type": "textarea",
+					"id": "process_desc",
+					"label": "Process Description"
+				}
+			]
+		}
+	]
+
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

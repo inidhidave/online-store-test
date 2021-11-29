@@ -1,0 +1,238 @@
+<!--product form-->
+            <form action="/cart/add" method="post" enctype="multipart/form-data" id="add-to-cart-{{ product.handle }}">
+{%comment%}
+                <!--product variants-->
+                {% unless product.has_only_default_variant %}
+
+                    {% for option in product.options_with_values %}
+
+                        <div class="single-product__option-wrapper js">
+
+                            {% assign option-name = option.name | downcase %}
+
+                            <div class="js-single-product-option-{{ option-name }} single-product-option-{{ option-name }}"
+                                 id="SingleOptionSelector-{{ forloop.index0 }}">
+
+                                {% for value in option.values %}
+
+                                    {% assign product-handle = product.handle %}
+
+                                    {% assign is_color = false %}
+
+                                    {% assign stripped-value = value | split: ' ' | last | handle %}
+
+                                    {% if option-name contains 'color' or option-name contains 'colour' %}
+
+                                        {% assign is_color = true %}
+
+                                    {% endif %}
+
+                                    {% if is_color %}
+
+                                        <input type="radio" name="{{ option-name }}-{{ product-handle }}"
+                                               class="single-option-selector single-product-option-{{ option-name }}__input js-radio-button"
+                                               data-single-option-selector
+                                               data-index="option{{ option.position }}"
+                                               value="{{ value | escape }}"
+                                               data-color="{{ value | handleize }}"
+                                               {% if option.selected_value == value %}checked="checked"{% endif %}
+                                               id="variant_{{ option-name }}-{{ product-handle }}-{{ forloop.index0 }}"/>
+
+                                        <label for="variant_{{ option-name }}-{{ product-handle }}-{{ forloop.index0 }}"
+                                               class="single-product-option-{{ option-name }}__label {% if stripped-value contains 'white' %}single-product-option-{{ option-name }}__label--white{% endif %}"
+                                               >
+{%comment%}
+                                            {% include 'icon-check' %}
+{%endcomment%}
+                                          {{ stripped-value }}
+                                        </label>
+
+                                    {% else %}
+
+                                        <input type="radio" name="{{ option-name }}-{{ product-handle }}"
+                                               class="single-option-selector single-product-option-{{ option-name }}__input"
+                                               data-single-option-selector
+                                               data-index="option{{ option.position }}"
+                                               value="{{ value | escape }}"
+                                               {% if option.selected_value == value %}checked="checked"{% endif %}
+                                               id="variant_{{ option-name }}-{{ product-handle }}-{{ forloop.index0 }}"/>
+
+                                        <label for="variant_{{ option-name }}-{{ product-handle }}-{{ forloop.index0 }}"
+                                               class="single-product-option-{{ option-name }}__label">{{ value }}</label>
+
+                                    {% endif %}
+
+                                {% endfor %}
+
+                            </div>
+
+                        </div>
+
+                    {% endfor %}
+
+                {% endunless %}
+              
+              {%endcomment%}
+              
+              {% unless product.has_only_default_variant %}
+              <div class="product-form__controls-group">
+                {% for option in product.options_with_values %}
+                  <div class="selector-wrapper js product-form__item">
+                    <label for="SingleOptionSelector-{{ forloop.index0 }}">
+                      {{ option.name }}
+                    </label>
+                    <select class="single-option-selector single-option-selector-{{ section.id }} product-form__input"
+                      id="SingleOptionSelector-{{ forloop.index0 }}"
+                      data-index="option{{ forloop.index }}"
+                    >
+                      {% for value in option.values %}
+                        <option value="{{ value | escape }}"{% if option.selected_value == value %} selected="selected"{% endif %}>{{ value }}</option>
+                      {% endfor %}
+                    </select>
+                  </div>
+                {% endfor %}
+              </div>
+            {% endunless %}
+
+            <select name="id" id="ProductSelect-{{ section.id }}" class="product-form__variants no-js">
+              {% for variant in product.variants %}
+                <option value="{{ variant.id }}"
+                  {%- if variant == current_variant %} selected="selected" {%- endif -%}
+                >
+                  {{ variant.title }}  {%- if variant.available == false %} - {{ 'products.product.sold_out' | t }}{% endif %}
+                </option>
+              {% endfor %}
+            </select>
+
+            {% if quanity_show %}
+              <div class="product-form__controls-group">
+                <div class="product-form__item">
+                  <span id="dec" class="btn btn-info-minus">-</span>
+                  <input type="text" id="Quantity-{{ section.id }}"
+                    name="quantity" value="1" min="1" pattern="[0-9]*" readonly
+                    class="product-form__input product-form__input--quantity quantity" data-quantity-input
+                  >
+                  <span id="inc" class="btn btn-info-plus">+</span>
+                </div>
+                <script>
+                  jQuery('#inc').on('click',function(){
+                      var $qty=$(this).closest('.product-form__item').find('.product-form__input');
+                      var currentVal = parseInt($qty.val());
+                      if (!isNaN(currentVal)) {
+                          $qty.val(currentVal + 1);
+                        var prd_price = $('.price-item.price-item--sale').attr('data-sale-price');
+                        $('.price-item').html(theme.Currency.formatMoney(prd_price*(currentVal + 1), theme.moneyFormat));
+                      }
+                  });
+                  jQuery('#dec').on('click',function(){
+                      var $qty=$(this).closest('.product-form__item').find('.product-form__input');
+                      var currentVal = parseInt($qty.val());
+                      if (!isNaN(currentVal) && currentVal > 1) {
+                          $qty.val(currentVal - 1);
+                        var prd_price = $('.price-item.price-item--sale').attr('data-sale-price');
+                        $('.price-item').html(theme.Currency.formatMoney(prd_price*(currentVal + 1), theme.moneyFormat));
+                      }
+                  });
+              </script>
+              </div>
+            {% endif %}
+      <div class="product-form__error-message-wrapper product-form__error-message-wrapper--hidden{% if section.settings.enable_payment_button %} product-form__error-message-wrapper--has-payment-button{% endif %}"
+              data-error-message-wrapper
+              role="alert"
+            >
+              <span class="visually-hidden">{{ 'general.accessibility.error' | t }} </span>
+              {% include 'icon-error' %}
+              <span class="product-form__error-message" data-error-message>{{ 'products.product.quantity_minimum_message' | t }}</span>
+            </div>
+
+                <select name="id" class="no-js" data-product-select>
+                    {% for variant in product.variants %}
+                        <option
+                                {% if variant == current_variant %}selected="selected"{% endif %}
+                                {% unless variant.available %}disabled="disabled"{% endunless %}
+                                value="{{ variant.id }}">
+                            {{ variant.title }}
+                        </option>
+                    {% endfor %}
+                </select>
+                <!--end product variants-->
+				<div class="product-single__description rte">
+                  {{ product.description }}
+                </div>
+                <!--product add to cart-->
+                <button
+                        class="desktop-addtocart single-product__add-to-cart u-b6 js-ajax-add-to-cart secondary-btn"
+                        type="submit"
+                        name="add"
+                        data-add-to-cart
+                        {% unless current_variant.available %}disabled="disabled"{% endunless %}>
+
+                    <span data-add-to-cart-text>
+                        {% if current_variant.available %}
+                            {{ 'products.product.add_to_cart' | t }}
+                        {% else %}
+                            {{ 'products.product.sold_out' | t }}
+                        {% endif %}
+                    </span>
+                </button>
+              
+              <button
+                        class="mobile-addtocart single-product__add-to-cart u-b6 secondary-btn"
+                        type="submit" onclick="submit_form()"
+                        name="add"
+                        data-add-to-cart
+                        {% unless current_variant.available %}disabled="disabled"{% endunless %}>
+
+                    <span data-add-to-cart-text>
+                        {% if current_variant.available %}
+                            {{ 'products.product.add_to_cart' | t }}
+                        {% else %}
+                            {{ 'products.product.sold_out' | t }}
+                        {% endif %}
+                    </span>
+
+                </button>
+              
+              <a class="tertiary-btn enquire-btn" href="#" tabindex="0" data-toggle="modal" data-target="#myModal_3">Enquire</a>
+                <!--end product add to cart-->
+		{% comment %}
+          <!-- Zip WIDGET -->
+              {%include 'zip-widget'%}
+              <style>
+                #zip-prod-widget > iframe { 
+                  position: relative !important;
+                  right: 20px !important;
+                }
+              </style>
+              <div style="cursor:pointer" id="zip-prod-widget" data-zm-asset="productwidget" data-zm-widget="popup" data-zm-popup-asset="termsdialog"></div>
+              <!-- end Zip WIDGET -->
+          {% endcomment %}
+              
+            </form>
+            <!--end product form-->
+
+
+
+
+<style>
+
+@media (max-width: 767px) {
+  .desktop-addtocart {
+     display: none;
+  }
+  .mobile-addtocart {
+  	 display: inline-block; 
+  }
+}
+  
+@media (min-width: 768px) {
+  .desktop-addtocart {
+     display: inline-block;
+  }
+  .mobile-addtocart {
+  	 display: none; 
+  }
+}
+  
+
+</style>

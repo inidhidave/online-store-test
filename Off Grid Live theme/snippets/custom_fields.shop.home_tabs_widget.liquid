@@ -1,0 +1,32 @@
+{% if shop.metafields.custom_fields["home_tabs_widget"] != blank %}
+{% assign data_attr = shop.metafields._cf_shop["home_tabs_widget"].data_attr %}
+<div class="cf-widget-home-tabs-widget cf-widget__tabs cf-auto-init" {{ data_attr }}>
+  <div class="cf-widget-items-wrapper">
+    <div class="tab-labels tab-labels--hidden">
+      {% for item in shop.metafields.custom_fields["home_tabs_widget"] %}
+      <span class="cf-tab" data-index="{{ forloop.index0 }}">
+        {{ item.title }}
+      </span>
+      {% endfor %}
+    </div>
+    <div class="tab-contents-container">
+      {% for item in shop.metafields.custom_fields["home_tabs_widget"] %}
+      <span class="cf-tab cf-tab--pseudo" data-index="{{ forloop.index0 }}">
+        {{ item.title }}
+      </span>
+      <div class="cf-widget-item" data-index="{{ forloop.index0 }}">
+        <div class="inner">
+          
+            {% if item.body != blank %}
+            <div class="cf-widget-field cf-widget-field__body cf-widget-field--html">
+              {{ item.body }}
+            </div>
+            {% endif %}
+          
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endif %}

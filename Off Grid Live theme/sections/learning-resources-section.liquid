@@ -1,0 +1,146 @@
+<section class="clearfix blog-block space-100 space-85" id="featured-section">
+  <div class="container">
+  <h6 class="sub-title">{{ section.settings.sub_title }}</h6>
+    <h2 class="main-title">{{ section.settings.main_title }}</h2>
+    
+                <div class="col-xs-12">
+                  <nav>
+                    <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist" style="border-bottom: 0;">
+                      <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true" style="font-family: 'Futura-Bold';
+    color: #000;
+    border: 0;">Articles</a>
+                      <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false" style="font-family: 'Futura-Bold';
+    color: #000;
+    border: 0;">Videos</a>
+                    </div>
+           </nav>
+         <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+           <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+              <div class="row">
+                
+               {% for link in linklists.blogs.links %}
+                
+                {% assign blog = link.object %}
+                
+                {% paginate blog.articles by 9 %}
+                
+               {% for article in blog.articles  %} 
+        <div class="col-md-4 mrg-btm-40">
+            <a href="{{ article.url }}"><div class="box-design">
+                <div class="save-box">
+                  {% if section.settings.blog_show_date %}
+                    <span>{{ article.published_at | time_tag: '%d %b', datetime:'%d -%m' }}</span>
+                  {% endif %}
+                </div>
+              <img src="{{ article.image | img_url:"900x" }}" class="blog_image" />
+                <div class="box-title">
+                    <h3>{{ article.title }}</h3>
+                  <span>{% if article.excerpt.size > 0 %}
+                        {{ article.excerpt }}
+                        {% else %}
+                        {{ article.content | strip_html | truncate: 150 }}
+                        {% endif %}</span>
+                </div>
+            </div></a>
+          <div class="btn-area">
+            <a href="{{ article.url }}" class="fourth-btn">Read More</a>
+          </div>
+        </div>
+      {% endfor %}
+                {% include 'pagination-custom' %}
+                {% endpaginate %}
+     {% endfor %}            
+    </div>
+  </div>
+  <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+    <div class="row">
+        <div class="col-md-4">
+          <iframe width="100%" height="315" src="https://www.youtube.com/embed/KIiD4MA5sfk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <div class="box-title">
+<!--             <p>Video 1</p> -->
+          </div>
+        </div>
+      
+        <div class="col-md-4">
+          <iframe width="100%" height="315" src="https://www.youtube.com/embed/KIiD4MA5sfk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <div class="box-title">
+<!--             <p>Video 1</p> -->
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <iframe width="100%" height="315" src="https://www.youtube.com/embed/KIiD4MA5sfk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <div class="box-title">
+<!--             <p>Video 1</p> -->
+          </div>
+        </div>
+    </div>
+  </div>
+  </div>
+ </div>
+<!--  <div class="text-center">
+   <div class="btn-area-center">
+      <a class="fifth-btn" href="#"> Learning Center</a>
+   </div>
+    </div>  -->
+  </div>
+</section>
+
+
+{% schema %}
+  {
+    "name": "Blog Section",
+    "settings": [
+		{
+			"type": "text",
+			"id": "sub_title",
+			"label": "Sub Heading"
+		},
+		{
+			"type": "text",
+			"id": "main_title",
+			"label": "Main Heading"
+		},
+		{
+      "type": "checkbox",
+      "id": "blog_show_date",
+      "label": {
+        "cs": "Zobrazit datum",
+        "da": "Vis dato",
+        "de": "Datum anzeigen",
+        "en": "Show date",
+        "es": "Mostrar fecha",
+        "fi": "Näytä päivämäärä",
+        "fr": "Afficher la date",
+        "it": "Mostra data",
+        "ja": "日付を表示する",
+        "ko": "날짜 표시",
+        "nb": "Vis dato",
+        "nl": "Datum weergeven",
+        "pl": "Pokaż datę",
+        "pt-BR": "Exibir data",
+        "pt-PT": "Mostrar data",
+        "sv": "Visa datum",
+        "th": "แสดงวันที่",
+        "tr": "Tarihi göster",
+        "vi": "Hiển thị ngày",
+        "zh-CN": "显示日期",
+        "zh-TW": "顯示日期"
+      },
+      "default": true
+    }
+	],
+	"presets": [
+		{
+			"name": "Blog Section",
+			"category": "blog"
+		}
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,62 @@
+{% if shop.metafields.custom_fields["product_reference"] != blank %}
+<section class="clearfix our-product-block space-100" id="our-product" {{data_attr}}>
+    <h6 class="sub-title">{{ section.settings.sub_heading }}</h6>
+    <h2 class="main-title">{{ section.settings.main_heading }}</h2>
+  
+     
+  <div class="container">  <div class="more-courses"> <a href="{{ section.settings.btn_link }}">{{ section.settings.btn_text }}</a></div></div>
+  
+    <div class="row">
+      {% assign collection_refs = shop.metafields.custom_fields["product_reference"] | split: "|" %}
+      {% for collection_handle in collection_refs %}
+      {% assign collection_ref = collections[collection_handle] %}
+        <div class="col-md-2">
+          <a href="{{ collection_ref.url }}">
+            <div class="box-design first-col">
+
+                <img src="{{ collection_ref.image | img_url: "532x500" }}" />
+                              <div class="box-title">         
+                    <h3>{{ collection_ref.title }}</h3>
+                </div>
+            </div>
+          </a>
+        </div>
+		{% endfor %}
+    </div>
+
+</section>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Our Product Section",
+  "settings": [
+    {
+		"type": "text",
+		"id": "sub_heading",
+		"label": "Sub Title"
+	},
+	{
+		"type": "text",
+		"id": "main_heading",
+		"label": "Main Title"
+	},
+	{
+        "id": "btn_link",
+        "type": "url",
+        "label": "Button URL"
+    },
+    {
+        "id": "btn_text",
+        "type": "text",
+        "label": "Button text"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Our Product Section",
+      "category": "product"
+    }
+  ]
+}
+{% endschema %}

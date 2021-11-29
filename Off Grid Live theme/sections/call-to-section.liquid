@@ -1,0 +1,60 @@
+<section class="clearfix space-100">
+    <div class="container">
+        <div class="row call-to-action">
+            <div class="col-md-2">
+                <img src="{{ section.settings.icon_cta | img_url: 'master' }}" />
+            </div>
+            <div class="col-md-7">
+                <div class="cta-title">
+                    <span>{{ section.settings.desc_text }}</span>
+                    <h4>{{ section.settings.heading }}</h4>
+                </div>
+            </div>
+            <div class="col-md-3 text-right">
+            <a href="#" class="tertiary-btn" tabindex="0" data-toggle="modal" data-target="#myModal_1"> {{ section.settings.btn_text }}</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+{% schema %}
+{
+  "name": "CTA Section",
+  "settings": [
+	{
+	  "type": "image_picker",
+	  "id": "icon_cta",
+	  "label": "Client logo"
+	},
+	{
+	  "type": "text",
+	  "id": "desc_text",
+	  "label": "Description"
+	},
+	{
+	  "type": "text",
+	  "id": "heading",
+	  "label": "Title"
+	},
+	{
+      "id": "btn_link",
+      "type": "url",
+      "label": "Button URL"
+    },
+    {
+      "id": "btn_text",
+      "type": "text",
+      "label": "Button text"
+    }
+    
+  ],
+  "presets": [
+    {
+      "name": "CTA Section",
+      "category": "call to action"
+    }
+  ]
+}
+{% endschema %}

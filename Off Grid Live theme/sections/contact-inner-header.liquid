@@ -1,0 +1,114 @@
+<div class="page-banner">
+<!--   	<img src="{{ section.settings.banner_img | img_url: 'master' }}"/> -->
+  <div class="banner-class" style="background-image:url({{ section.settings.banner_img | img_url: 'master' }});"></div>
+    
+    
+  
+	<div class="inner-content">
+      <ul class="breadcrumbs">
+        {% render 'breadcrumbs' %}
+      </ul>
+      <h1 class="page-title">{{ page_title }}</h1>
+  	</div>
+  </div>
+  <div class="container">
+     <div class="contact-page-top-contact"> 
+      <div class="row">
+        
+        <div class="col-md-4">
+          <div class="f-address">
+            <div class="img-block"><img src="{{ section.settings.icon_address | img_url: 'master' }}" /></div>
+            <div class="address-content">
+            <p>{{ section.settings.address_title }} </p>
+            <span>{{ section.settings.address }} </span>
+              </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="f-phone">
+            <div class="img-block"><img src="{{ section.settings.icon_phone  | img_url: 'master' }}" /></div>
+            <div class="address-content"><p>{{ section.settings.phone_title }}</p>
+              {{ section.settings.phone }}
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="f-Email">
+            <div class="img-block"><img src="{{ section.settings.icon_email | img_url: 'master' }}" /></div>
+           <div class="address-content"> 
+             <p>{{ section.settings.email_title }}</p>
+             {{ section.settings.email }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% schema %}
+  {
+    "name": "Inner Header Section",
+    "settings": [
+	  {
+		"type": "image_picker",
+		"id": "banner_img",
+		"label": "Banner Image"
+	  },
+	  {
+		"type": "image_picker",
+		"id": "icon_address",
+		"label": "Icon Adress"
+	},
+	{
+		"type": "text",
+		"id": "address_title",
+		"label": "Adress Title"
+	},
+	{
+		"type": "html",
+		"id": "address",
+		"label": "Address"
+	},
+
+	{
+		"type": "image_picker",
+		"id": "icon_phone",
+		"label": "Icon Phone"
+	},
+	{
+		"type": "text",
+		"id": "phone_title",
+		"label": "Phone Title"
+	},
+	{
+		"type": "html",
+		"id": "phone",
+		"label": "Phone"
+	},
+
+	{
+		"type": "image_picker",
+		"id": "icon_email",
+		"label": "Icon Email"
+	},
+	{
+		"type": "text",
+		"id": "email_title",
+		"label": "Email Title"
+	},
+	{
+		"type": "html",
+		"id": "email",
+		"label": "Email"
+	}
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

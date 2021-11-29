@@ -1,0 +1,135 @@
+<section class="clearfix what-you-need-section space-100 space-85" id="what-you-nned-section">
+    <h6 class="sub-title">{{ section.settings.sub_title }}</h6>
+    <h2 class="main-title">{{ section.settings.title1 }} </h2>
+	<div class="container">
+      <div class="row">
+       <div class="col-xs-12 ">
+         <nav>
+           <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+             {% for block in section.blocks %}
+             <a class="nav-item nav-link 
+                {% if forloop.index == 1 %} active {% endif %} what-need-tab-{{ forloop.index }}" 
+                id="need_tablink_id_{{ forloop.index }}" 
+                data-toggle="tab" href="#need_tab_id_{{ forloop.index }}" 
+                role="tab" aria-controls="need_tab_id_{{ forloop.index }}" 
+                aria-selected="{% if forloop.index == 1 %}true{%else%}false{%endif%}">
+               <div class="what-tab-content"><span></span>
+               <p>{{block.settings.tab_title}}</p>
+             </div></a>
+             {% endfor %}
+           </div>
+          </nav>
+          <div class="tab-content space-100" id="nav-tabContent">
+                       
+            {% assign counter_main = 1 %}
+            
+            {% for block in section.blocks %}
+            
+            {% case forloop.index %}
+            
+            {% when 1 %}
+            <div class="tab-pane fade {% if forloop.index == 1 %}show active {% endif %} benefits-block"  
+              id="need_tab_id_{{ forloop.index }}" 
+              role="tabpanel" aria-labelledby="need_tab_id_{{ forloop.index }}">            
+              {% include 'why-off-grid-snippet', tab_title: block.settings.tab_content_title, tab_para: block.settings.tab_content_para, tab_button: block.settings.tab_btn_text, tab_button_link: block.settings.tab_btn_url, tab_img: block.settings.tab_content_image_large %}
+            </div>
+            
+            {% when 2 %}
+            <div class="tab-pane fade benefits-block" id="need_tab_id_{{ forloop.index }}" role="tabpanel" aria-labelledby="need_tab_id_{{ forloop.index }}">
+              {% include 'what-you-get-snippet', tab_title: block.settings.tab_content_title, tab_para: block.settings.tab_content_para, tab_button: block.settings.tab_btn_text, tab_button_link: block.settings.tab_btn_url, tab_img: block.settings.tab_content_image_large %}
+            </div>
+            
+            {% when 3 %}
+            <div class="tab-pane fade our-process-block-tab" id="need_tab_id_{{ forloop.index }}" role="tabpanel" aria-labelledby="need_tab_id_{{ forloop.index }}">
+              {% include 'our-process-snippet', tab_title: block.settings.tab_content_title, tab_para: block.settings.tab_content_para, tab_button: block.settings.tab_btn_text, tab_button_link: block.settings.tab_btn_url, tab_img: block.settings.tab_content_image_large %}
+            </div>   
+            
+            {% when 4 %}
+            <div class="tab-pane fade benefits-block" id="need_tab_id_{{ forloop.index }}" role="tabpanel" aria-labelledby="need_tab_id_{{ forloop.index }}">
+              {% include 'is-off-grid-snippet', tab_title: block.settings.tab_content_title, tab_para: block.settings.tab_content_para, tab_button: block.settings.tab_btn_text, tab_button_link: block.settings.tab_btn_url, tab_img: block.settings.tab_content_image_large %} 
+            </div>
+            
+            {% endcase %}
+            
+            {% assign counter_main = counter_main | plus: 1 %}
+            
+            {% endfor %}
+            
+         </div>             
+       </div>
+     </div>
+    </div>
+</section>
+
+<style>
+  .btn-area .secondary-btn{
+  	margin-top: 30px;
+    margin-left: 0;
+  	display: inline-block;
+  }
+</style>
+
+{% schema %}
+{
+   "name":"Whatyouneed Section",
+   "settings":[
+      {
+         "type":"text",
+         "id":"sub_title",
+         "label":"Sub Title"
+      },
+      {
+         "type":"text",
+         "id":"title1",
+         "label":"Heading"
+      }
+   ],
+   "blocks":[
+      {
+         "type":"tabs_blocks",
+         "name":"Tabs",
+         "limit":4,
+         "settings":[
+            {
+               "id":"tab_title",
+               "type":"text",
+               "label":"Tab Title"
+            },
+			{
+			   "id": "tab_content_title",
+			   "type": "text",
+			   "label": "Tab Content Heading"
+			}, 
+			{
+			   "id": "tab_content_para",
+			   "type": "textarea",
+			   "label": "Tab Content Paragraph"
+			},
+			{
+			   "id": "tab_btn_text",
+			   "type": "text",
+			   "label": "Tab Button Text"
+			},
+			{
+			   "id": "tab_btn_url",
+			   "type": "url",
+			   "label": "Tab Button URL"
+			},
+			{
+			   "id": "tab_content_image_large",
+			   "type": "image_picker",
+			   "label": "Tab Content Image"
+			}
+         ]
+      }      
+   ],
+   "presets":[
+      {
+         "name":"All About Grid Section",
+         "category":"about"
+      }
+   ]
+}
+{% endschema %}
+
+

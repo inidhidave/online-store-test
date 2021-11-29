@@ -1,0 +1,56 @@
+{% if shop.metafields.custom_fields["our_products"] != blank %}
+{% assign settings = shop.metafields._cf_shop["our_products"].settings %}
+{% assign data_attr = shop.metafields._cf_shop["our_products"].data_attr %}
+<div class="cf-widget-our-products cf-widget__product-references" {{ data_attr }}>
+  <div class="cf-widget-items-wrapper">
+    {% for item in shop.metafields.custom_fields["our_products"] %}
+    {% assign product = all_products[item.handle] %}
+    {% if product.published_at != blank %}
+    <div class="cf-widget-item {% if product.available != true and settings.hide_out_of_stock != 1 %}cf-widget-item--out-of-stock{% endif %}">
+      <div class="inner">
+        <a href="{{ product.url }}" class="cf-product-link"></a>
+        <div class="cf-product-image-wrapper">
+          <img src="{{ product | img_url: "532x500", crop: "center" }}" class="cf-product-image">
+        </div>
+        <div class="cf-product-info">
+          <div class="cf-product-title">
+            {% if item.title_override != blank %}
+            {{ item.title_override }}
+            {% else %}
+            {{ product.title | truncate: 40 }}
+            {% endif %}
+          </div>
+
+          {% if settings.hide_price != 1 %}
+          <div class="cf-product-price">
+            {{ product.price | money }}
+          </div>
+          {% endif %}
+
+          
+            {% if item.description != blank %}
+            <div class="cf-widget-field cf-widget-field__description cf-widget-field--html">
+              {{ item.description }}
+            </div>
+            {% endif %}
+          
+          {% if settings.hide_out_of_stock != 1 and product.available != true %}
+          <div class="cf-product-stock-notice">
+            {{ 'products.product.sold_out' | t }}
+          </div>
+          {% endif %}
+
+          {% if settings.link_title != blank %}
+          <a class="btn cf-product-custom-link-text" href="{{ product.url }}">
+            {{ settings.link_title }}
+          </a>
+          {% endif %}
+
+        </div>
+      </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+  </div>
+</div>
+{% endif %}

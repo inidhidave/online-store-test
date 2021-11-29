@@ -1,0 +1,95 @@
+<div class="benefits-section container-fluid">
+    <div class="row">
+        <div class="col-md-6 benefits-img">
+            <img src="{{ section.settings.benefit_img | img_url: 'master' }} {{ 'benefits.png' | asset_url }}"/>
+        </div>
+
+        <div class="col-md-6 benefits-ctn why-benefits-block">
+            <div class="benefits-inner-ctn benefits-block-bg">
+                <span>{{ section.settings.benefit_sub_heading }} </span>
+                <h2>{{ section.settings.benefit_heading }} </h2>
+                <p>{{ section.settings.benefit_desc }} </p>
+                <div class="panel-group" id="accordion">
+                  
+                  {%- assign contentIndex = 0 -%}
+                  
+                  {% for block in section.blocks %}
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{ contentIndex }}">
+                                    <img src="{{ block.settings.accordin_icon | img_url: 'master' }} "/>
+                                    <span>{{ block.settings.accordin_heading }} </span>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapse{{ contentIndex }}" class="panel-collapse collapse">
+                            <div class="panel-body">{{ block.settings.accordin_desc }} </div>
+                        </div>
+                    </div>
+                  {%- assign contentIndex = contentIndex | plus: 1 -%}
+                  	{% endfor %} 
+                  
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Benefit Section",
+    "settings": [
+	  {
+	  	"type": "image_picker",
+		"id": "benefit_img",
+		"label": "Benefit Image"
+	  },
+	  {
+	  	"type": "text",
+		"id": "benefit_sub_heading",
+		"label": "Benefit SubHeading"
+	  },
+	  {
+	  	"type": "text",
+		"id": "benefit_heading",
+		"label": "Benefit Heading"
+	  },
+	  {
+	  	"type": "textarea",
+		"id": "benefit_desc",
+		"label": "Benefit Description"
+	  }
+	],
+	
+	"blocks": [
+		{
+			"type": "faq",
+			"name": "Benefit FAQ",
+			"settings": [
+				{
+					"type": "image_picker",
+					"id": "accordin_icon",
+					"label": "Accordin Icon"
+				},
+				{
+					"type": "text",
+					"id": "accordin_heading",
+					"label": "Accordin Heading"
+				},
+				{
+					"type": "textarea",
+					"id": "accordin_desc",
+					"label": "Accordin Description"
+				}
+			]
+		}
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

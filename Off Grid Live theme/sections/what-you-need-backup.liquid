@@ -1,0 +1,107 @@
+<section class="clearfix what-you-need-section space-100 space-85" id="what-you-nned-section">
+    <h6 class="sub-title">{{ section.settings.sub_title }}</h6>
+    <h2 class="main-title">{{ section.settings.title1 }} </h2>
+	<div class="container">
+      <div class="row">
+       <div class="col-xs-12 ">
+         <nav>
+           <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+             <a class="nav-item nav-link active why-off-grid" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true"><span></span><p>Why Off Grid</p></a>
+             <a class="nav-item nav-link why-us" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false"><span></span><p>Why Us</p></a>
+             <a class="nav-item nav-link our-process" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false"><span></span><p>Our Process</p></a>
+             <a class="nav-item nav-link who-off" id="nav-about-tab" data-toggle="tab" href="#nav-about" role="tab" aria-controls="nav-about" aria-selected="false"><span></span><p>Who's Off Grid For</p></a>
+           </div>
+          </nav>
+          <div class="tab-content space-100" id="nav-tabContent">
+            <div class="tab-pane fade show active benefits-block" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+            <div>
+ 				{% include 'why-off-grid-snippet' %}
+            </div>
+   			</div>
+           <div class="tab-pane fade benefits-block" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+             {% include 'what-you-get-snippet' %}
+           </div>
+     <div class="tab-pane fade our-process-block-tab" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+           {% include 'our-process-snippet' %}
+      </div>       
+       
+          <div class="tab-pane fade benefits-block" id="nav-about" role="tabpanel" aria-labelledby="nav-about-tab">
+             {% include 'is-off-grid-snippet' %}         
+          </div>
+         </div>             
+       </div>
+     </div>
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": "Whatyouneed Section",
+  "settings": [
+    {
+	  "type": "text",
+	  "id": "sub_title",
+	  "label": "Sub Title"
+	},
+	{
+	  "type": "text",
+	  "id": "title1",
+	  "label": "Heading"
+	}
+  ],
+  "blocks": [
+    {
+	  "type": "first-section",
+	  "name": "Why Off Grid Section",
+	  "settings": [
+	    {
+		  "id": "imageOne",
+		  "type": "image_picker",
+		  "label": "Image"
+		}
+	  ]
+    },
+    {
+      "type": "second-section",
+      "name": "What You Get Section",
+      "settings": [
+        {
+          "id": "imageOne",
+          "type": "image_picker",
+          "label": "Image"
+        }
+      ]
+    },
+    {
+      "type": "third-section",
+      "name": "Our Process Section",
+      "settings": [
+        {
+          "id": "imageOne",
+          "type": "image_picker",
+          "label": "Image"
+        }
+      ]
+    },
+    { 
+	  "type": "fourth-section",
+	  "name": "Is Off Grid Section", 
+	  "settings": [ 
+	    {
+		  "id": "imageOne",
+		  "type": "image_picker",
+		  "label": "Image"
+		}
+      ]
+    } 
+  ],
+  "presets": [
+    {
+      "name": "All About Grid Section 1",
+      "category": "about"
+    }
+  ]
+}
+{% endschema %}
+
+

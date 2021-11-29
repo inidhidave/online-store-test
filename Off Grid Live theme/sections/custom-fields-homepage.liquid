@@ -1,0 +1,58 @@
+{% render "blocks.custom_fields" with resource_type: "shop", blocks: section.blocks %}
+{% schema %}
+  {
+    "name": {
+        "en": "Custom Fields"
+    },
+    "settings": [
+        {
+            "type": "paragraph",
+            "content": "[View Documentation](https:\/\/custom-fields.docs.bonify.io\/)"
+        },
+        {
+            "type": "paragraph",
+            "content": "[Edit Custom Fields](https:\/\/customfields.bonify.io\/dashboard\/the-off-grid-shop.myshopify.com\/home-page\/configure)"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "cf_w_tabs",
+            "name": {
+                "en": "Tabs "
+            },
+            "settings": [
+                {
+                    "type": "select",
+                    "id": "key",
+                    "label": "Select a Widget",
+                    "options": [
+                        {
+                            "value": "home_tabs_widget",
+                            "label": "Home Tabs Widget"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "cf_w_pr",
+            "name": {
+                "en": "Product References "
+            },
+            "settings": [
+                {
+                    "type": "select",
+                    "id": "key",
+                    "label": "Select a Widget",
+                    "options": [
+                        {
+                            "value": "our_products",
+                            "label": "Our Products"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}

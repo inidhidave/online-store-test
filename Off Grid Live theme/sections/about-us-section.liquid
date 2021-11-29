@@ -1,0 +1,53 @@
+<div class="about-us-sec container-fluid">
+    <div class="row">
+        <div class="col-md-6 about-img">
+            <img src="{{ section.settings.about_image | img_url: 'master' }}"/>    
+        </div>
+
+        <div class="col-md-6 about-ctn">
+            <div class="about-inner-ctn">
+                <h2>{{ section.settings.about_heading  }}</h2>
+              <p>{{ section.settings.about_desc  }}</p>
+                <a class="primary-btn" href="{{ section.settings.btn_link  }}">{{ section.settings.btn_text }}</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% schema %}
+  {
+    "name": "About Us Section",
+    "settings": [
+		{
+          "type": "image_picker",
+          "id": "about_image",
+          "label": "About Image"
+        },
+        {
+          "type": "text",
+          "id": "about_heading",
+          "label": "About Heading"
+        },
+		{
+          "type": "html",
+          "id": "about_desc",
+          "label": "About Description"
+        },
+		{
+      	   "id": "btn_link",
+           "type": "url",
+          "label": "Button URL"
+    	},
+    	{
+          "id": "btn_text",
+          "type": "text",
+          "label": "Button text"
+    	}
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

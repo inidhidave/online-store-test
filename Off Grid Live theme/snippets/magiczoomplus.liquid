@@ -1,0 +1,268 @@
+{% assign MagicToolboxSirvID = '' %}
+{% assign MagicToolboxSirvSpinPosition = 'last' %}
+{% assign MagicToolboxSirvSpinsPath = 'products/{product-sku}/{product-sku}.spin' %}
+{% assign MagicToolboxSirvCombineVariants = 'Yes' %}
+{% assign MagicToolboxSirvSpinsPathTransform = '' %}
+{% assign MagicToolboxSirvIconURL = '//magictoolbox.sirv.com/shopify/icons/icon.spin.1.png' %}
+{% assign MagicToolboxThumbnailsLayout = 'left' %}
+{% assign MagicToolboxUseMagicScroll = 'Yes' %}
+{% assign MagicToolboxShowMessage = 'No' %}
+{% assign MagicToolboxMessage = 'Move your mouse over image or click to enlarge' %}
+{% assign MagicToolboxBigImageSize = 'original' %}
+{% assign MagicToolboxThumbnailImageSize = 'original' %}
+{% assign MagicToolboxSelectorImageSize = 'compact' %}
+{% assign MagicToolboxUseCustomWidth = 'No' %}
+{% assign MagicToolboxThumbnailImageWidth = '480' %}
+
+{% assign MagicToolboxRetinaZoomImage = 'Yes' %}
+{% assign MagicToolboxRetinaMainImage = 'Yes' %}
+{% assign MagicToolboxRetinaThumbnailImage = 'No' %}
+
+{% if MagicToolboxUseCustomWidth == 'Yes' %}
+<style type="text/css">.MagicZoomPlus > figure > img { max-width: {{ MagicToolboxThumbnailImageWidth }}px !important; }</style>
+{% endif %}
+
+{% assign SirvMaxHeight = 0 %}
+{% case MagicToolboxThumbnailImageSize %}
+    {% when 'medium' %}
+      {% assign SirvMaxHeight = 240 %}
+    {% when 'large' %}
+      {% assign SirvMaxHeight = 480 %}
+    {% when 'grande' %}
+      {% assign SirvMaxHeight = 600 %}
+    {% when '1024x1024' %}
+      {% assign SirvMaxHeight = 1024 %}
+    {% when 'original' %}
+      {% assign SirvMaxHeight = 1024 %}
+    {% when '2048x2048' %}
+      {% assign SirvMaxHeight = 2048 %}
+{% endcase %}
+
+{% case MagicToolboxSelectorImageSize %}
+    {% when 'pico' %}
+      {% assign MagicToolboxSelectorImageSize2x = 'icon' %}
+    {% when 'icon' %}
+      {% assign MagicToolboxSelectorImageSize2x = 'thumb' %}
+    {% when 'thumb' %}
+      {% assign MagicToolboxSelectorImageSize2x = 'small' %}
+    {% when 'small' %}
+      {% assign MagicToolboxSelectorImageSize2x = 'compact' %}
+    {% when 'compact' %}
+      {% assign MagicToolboxSelectorImageSize2x = 'medium' %}
+    {% when 'medium' %}
+      {% assign MagicToolboxSelectorImageSize2x = 'large' %}
+    {% when 'large' %}
+      {% assign MagicToolboxSelectorImageSize2x = 'grande' %}
+    {% when 'grande' %}
+      {% assign MagicToolboxSelectorImageSize2x = 'original' %}
+    {% when '1024x1024' %}
+      {% assign MagicToolboxSelectorImageSize2x = '2048x2048' %}
+    {% when 'original' %}
+      {% assign MagicToolboxSelectorImageSize2x = '2048x2048' %}
+    {% when '2048x2048' %}
+      {% assign MagicToolboxSelectorImageSize2x = '2048x2048' %}
+    {% else %}
+      {% assign MagicToolboxSelectorImageSize2x = MagicToolboxSelectorImageSize %}
+{% endcase %}  
+{% case MagicToolboxThumbnailImageSize %}
+    {% when 'pico' %}
+      {% assign MagicToolboxThumbnailImageSize2x = 'icon' %}
+    {% when 'icon' %}
+      {% assign MagicToolboxThumbnailImageSize2x = 'thumb' %}
+    {% when 'thumb' %}
+      {% assign MagicToolboxThumbnailImageSize2x = 'small' %}
+    {% when 'small' %}
+      {% assign MagicToolboxThumbnailImageSize2x = 'compact' %}
+    {% when 'compact' %}
+      {% assign MagicToolboxThumbnailImageSize2x = 'medium' %}
+    {% when 'medium' %}
+      {% assign MagicToolboxThumbnailImageSize2x = 'large' %}
+    {% when 'large' %}
+      {% assign MagicToolboxThumbnailImageSize2x = 'grande' %}
+    {% when 'grande' %}
+      {% assign MagicToolboxThumbnailImageSize2x = 'original' %}
+    {% when '1024x1024' %}
+      {% assign MagicToolboxThumbnailImageSize2x = '2048x2048' %}
+    {% when 'original' %}
+      {% assign MagicToolboxThumbnailImageSize2x = '2048x2048' %}
+    {% when '2048x2048' %}
+      {% assign MagicToolboxThumbnailImageSize2x = '2048x2048' %}
+    {% else %}
+      {% assign MagicToolboxThumbnailImageSize2x = MagicToolboxThumbnailImageSize %}
+{% endcase %}  
+
+
+<div class="MagicToolboxContainer layout-{{ MagicToolboxThumbnailsLayout }} thumbnail-size-{{ MagicToolboxSelectorImageSize }}{% if product.images.size < 2 %} no-thumbnails{% endif %}">
+
+    {% assign mt_current_variant = product.selected_variant | default: product.selected_or_first_available_variant %}
+    {% assign mt_featured_image = mt_current_variant.featured_media | default: product.featured_media %}
+    {% assign mt_featured_image_ = '' %}
+    {% assign first_image_is_video = false %}
+    {% assign addActiveClass = true %}
+
+    {% assign ScrollOrientation = 'vertical' %}
+    {% if MagicToolboxThumbnailsLayout == 'bottom' %}
+        {% assign ScrollOrientation = 'horizontal' %}
+    {% endif %}
+
+    {% capture MagicToolboxSelectors %}
+    <div class="MagicToolboxSelectorsContainer{% if MagicToolboxUseMagicScroll == 'No' %} no-magic-scroll{% endif %}" {% if product.media.size < 2 %}style="display:none"{% endif %}>
+      {% if MagicToolboxUseMagicScroll == 'Yes' %}
+      <div id="msc-selectors-container" class="MagicScroll" data-options="autostart: false; orientation: {{ ScrollOrientation }};" data-mobile-options="orientation: horizontal;">
+        {% endif %}
+        
+        {% for image in product.media %}
+        
+          {% if image.media_type == 'video' %}
+        
+            <a class="js-no-transition" data-processed="1" data-slide-id="video-{{ image.id }}" href="#">
+                  <img src="{{ image.preview_image | product_img_url: MagicToolboxSelectorImageSize }}" alt="{{ image.alt | escape }}" />
+            </a>
+        
+          {% elsif image.media_type == 'external_video' %}
+        
+            <a class="js-no-transition" data-processed="1" data-slide-id="video-{{ image.id }}" href="#">
+                  <img src="{{ image.preview_image | product_img_url: MagicToolboxSelectorImageSize }}" alt="{{ image.alt | escape }}" />
+            </a>
+
+          {% elsif image.alt contains 'youtube' or image.alt contains 'vimeo' or image.alt contains 'youtu.be' %}
+                {% if forloop.index0 == 0 and mt_featured_image == image %}
+                    {% assign first_image_is_video = true %}
+                {% endif %}
+                <a class="js-no-transition" data-slide-id="video-{{ image.id }}" href="{{ image.alt }}"><img src="{{ image | product_img_url: MagicToolboxSelectorImageSize }}" alt="{{ image.alt | escape }}" /></a>
+            {% else %}
+                {% assign product_variants = ',' %}            
+
+                {% for v in product.variants %}
+                  {% if image.id == v.featured_media.id %}
+                    {% assign product_variants = product_variants | append: ',' | append: v.id %}
+                  {% endif %}
+                {% endfor %}
+                
+
+                {% assign class = '' %}
+                {% if image.id == mt_current_variant.featured_media.id and addActiveClass %}
+                  {% assign class = 'active-magic-selector' %}
+                {% assign addActiveClass = false %}
+                {% endif %}        
+                {% if mt_current_variant.featured_media == blank and mt_featured_image_ == '' %}
+                  {% assign class = 'active-magic-selector' %}
+                  {% assign addActiveClass = false %}
+                  {% assign mt_featured_image = image %}
+                {% endif %}
+
+                <a data-variants="{{ product_variants }}"                
+                   class="js-no-transition {{ class }}"
+                   data-slide-id="zoom" 
+                   href="{{ image | product_img_url: MagicToolboxBigImageSize }}" 
+                   {% if MagicToolboxRetinaZoomImage == 'Yes' %}data-zoom-image-2x="{{ image | product_img_url: 'master' }}"{% endif %}
+                   data-zoom-id="zoom{{ product.id }}" 
+                   data-image="{{ image | product_img_url: MagicToolboxThumbnailImageSize }}" 
+              {% if MagicToolboxRetinaMainImage == 'Yes' %}data-image-2x="{{ image | product_img_url: MagicToolboxThumbnailImageSize2x }}" {% endif %}
+                   title="{{ image.alt | escape }}">
+                        <img 
+                             src="{{ image | product_img_url: MagicToolboxSelectorImageSize }}" 
+                             {% if MagicToolboxRetinaThumbnailImage == 'Yes' %}srcset="{{ image | product_img_url: MagicToolboxSelectorImageSize2x }} 2x" {% endif %}
+                             alt="{{ image.alt | escape }}" 
+                        />
+                </a>
+                {% if mt_featured_image_ == '' %}
+                    {% assign mt_featured_image_ = image %}
+                {% endif %}
+            {% endif %}
+        
+          
+        {% endfor %}
+        {% if MagicToolboxUseMagicScroll == 'Yes' %}
+      </div>
+      {% endif %}
+    </div>
+    {% endcapture %}
+  
+    {% if first_image_is_video %}
+        {% assign mt_featured_image = mt_featured_image_ %}       
+    {% endif %}
+  
+    {% if MagicToolboxThumbnailsLayout == 'left' or MagicToolboxThumbnailsLayout == 'right' %}
+        {{ MagicToolboxSelectors }}
+    {% endif %}
+
+    <div class="MagicToolboxSlides">
+        <a {% if product.images.size < 2 %}style="display:none"{% endif %} href="#" class="js-no-transition MagicToolboxSlides-arrow magic-prev"></a>
+        <a {% if product.images.size < 2 %}style="display:none"{% endif %} href="#" class="js-no-transition MagicToolboxSlides-arrow magic-next"></a>
+        <div data-slide-num="{{ forloop.index0 }}" data-slide-id="zoom" class="MagicToolboxSlide active-magic-slide">
+            <a 
+               href="{{ mt_featured_image | product_img_url: MagicToolboxBigImageSize }}"
+               {% if MagicToolboxRetinaZoomImage == 'Yes' %}data-zoom-image-2x="{{ mt_featured_image | product_img_url: 'master' }}"{% endif %}
+               class="js-no-transition MagicZoomPlus" id="zoom{{ product.id }}" 
+               title="{{ mt_featured_image.alt | escape }}"
+               data-image="{{ mt_featured_image | product_img_url: MagicToolboxThumbnailImageSize }}" 
+               {% if MagicToolboxRetinaMainImage == 'Yes' %}data-image-2x="{{ mt_featured_image | product_img_url: MagicToolboxThumbnailImageSize2x }}" {% endif %}
+               >
+                    <img 
+                         itemprop="image" 
+                         src="{{ mt_featured_image | product_img_url: MagicToolboxThumbnailImageSize }}" 
+                         {% if MagicToolboxRetinaMainImage == 'Yes' %}srcset="{{ mt_featured_image | product_img_url: MagicToolboxThumbnailImageSize2x }} 2x" {% endif %}
+                         alt="{{ mt_featured_image.alt | escape }}" />
+            </a>
+            
+            {% if MagicToolboxShowMessage == 'Yes' %}
+            <div class="MagicToolboxMessage">{{ MagicToolboxMessage }}</div>
+            {% endif %}
+        </div>
+        {% for image in product.media %}
+          {% if image.media_type == 'video' %}
+        
+            <div data-processed="1" data-slide-num="{{ forloop.index0 }}" class="MagicToolboxSlide" data-slide-id="video-{{ image.id }}">
+                    <div class="magic-video-container" style="padding-bottom:{{ 1 | divided_by: image.aspect_ratio | times: 100 }}%">
+                {{ image | video_tag: controls: true }}
+                    </div>
+            </div>
+          
+          {% elsif image.media_type == 'external_video' %}
+        
+            <div data-processed="1" data-slide-num="{{ forloop.index0 }}" class="MagicToolboxSlide" data-slide-id="video-{{ image.id }}">
+                    <div class="magic-video-container" style="padding-bottom:{{ 1 | divided_by: image.aspect_ratio | times: 100 }}%">
+                {{ image | external_video_tag }}
+                    </div>
+            </div>
+          
+          {% elsif image.alt contains 'youtube' or image.alt contains 'vimeo' or image.alt contains 'youtu.be' %}
+                <div data-slide-num="{{ forloop.index0 }}" class="MagicToolboxSlide" data-slide-id="video-{{ image.id }}" data-video-url="{{ image.alt }}"></div>
+            {% endif %}
+        {% endfor %}
+    </div>
+
+    {% if MagicToolboxThumbnailsLayout == 'bottom' %}
+        {{ MagicToolboxSelectors }}
+    {% endif %}
+
+</div>
+
+<script type="text/javascript">
+var SirvID = '{{ MagicToolboxSirvID }}';
+var SirvSpinsPath = '{{ MagicToolboxSirvSpinsPath }}';
+var SirvProductID = {{ product.id }}, SirvProductSKU = '{{ product.variants.first.sku }}', SirvProductName = '{{ product.title | escape }}';
+var SirvMaxHeight = {{ SirvMaxHeight }};
+var SirvSpinsPathTransform = '{{ MagicToolboxSirvSpinsPathTransform }}';
+var SirvCombineVariants = '{{ MagicToolboxSirvCombineVariants }}';
+
+if (SirvCombineVariants == 'No') {
+  SirvSpinsPathTransform = '';
+}
+
+if (SirvProductSKU == '') {
+  SirvProductSKU = '{{ product.handle }}';
+}    
+    
+var SirvIconURL = '{{ MagicToolboxSirvIconURL }}';
+var SirvSpinPosition = '{{ MagicToolboxSirvSpinPosition }}';
+var SirvVariants = {}, SirvVariantsSKU = {};
+{% for variant in product.variants %}
+variant = {{ variant | json }};
+SirvVariants[variant.id] = false;
+SirvVariantsSKU[variant.id] = {{ variant | json }};
+{% endfor %}  
+var currentVariantID = {{ mt_current_variant.id | default: 0 }};
+var mt_product = {{ product | json }};
+</script>

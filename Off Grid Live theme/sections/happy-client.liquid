@@ -1,0 +1,63 @@
+<div class="client-feedback">
+    <div class="container">
+        <ul class="feedback-items">
+          {% for block in section.blocks %}
+            <li>
+                <img src="{{ block.settings.client_icon | img_url: 'master' }} {{ 'installed.svg' | asset_url }}"/>
+                <div class="feedback-ctn">
+                  <span>{{ block.settings.sub_heading }}</span>  
+                  <h3>{{ block.settings.heading }} </h3>
+                    <p>{{ block.settings.icon_heading }} </p>
+                </div>
+            </li>
+          	{% endfor %}            
+        </ul>
+    </div>
+</div>
+{% schema %}
+  {
+    "name": "Happy Client Section",
+    "settings": [],
+	
+	"blocks": [
+	 {
+	   "type": "Blocks",
+	   "name": "Happy Client",
+	   "settings": [
+	   {
+		 "type": "image_picker",
+		 "id": "client_icon",
+		 "label": "Client Icon"
+	   },
+	     {
+		 "type": "text",
+		 "id": "sub_heading",
+		 "label": "Sub Heading"
+	   },
+	   {
+		 "type": "text",
+		 "id": "heading",
+		 "label": "Heading"
+	   },
+	   {
+		 "type": "text",
+		 "id": "icon_heading",
+		 "label": "Icon Heading"
+	   }
+	]
+ }
+	],
+	"presets": [
+		{
+			"name": "Happ Client Section",
+			"category": "client"
+		}
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

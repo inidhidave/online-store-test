@@ -1,0 +1,59 @@
+<div class="free-energy container-fluid">
+    <div class="row">
+        <div class="col-md-6 free-energy-ctn">
+            <div class="free-energy-inner-ctn">
+                <span>{{ section.settings.sub_heading }}</span>
+                <h2>{{ section.settings.heading }}</h2>
+                <p>{{ section.settings.description }} </p>
+                <a class="primary-btn" href="{{ section.settings.btn_link }}">{{ section.settings.btn_text }} </a>
+            </div>
+        </div>
+
+        <div class="col-md-6 free-energy-img">
+            <img src="{{ section.settings.sec_img | img_url: 'master' }}"/>    
+        </div>
+    </div> 
+</div>
+{% schema %}
+  {
+    "name": "Clean Free Section",
+    "settings": [
+		{
+			"type": "text",
+			"id": "sub_heading",
+			"label": "Sub Heading"
+		},
+		{
+			"type": "text",
+			"id": "heading",
+			"label": "Heading"
+		},
+		{
+			"type": "textarea",
+			"id": "description",
+			"label": "Description"
+		},
+		{
+			"type": "image_picker",
+			"id": "sec_img",
+			"label": "Image"
+		},
+		{
+      	   "id": "btn_link",
+           "type": "url",
+          "label": "Button URL"
+    	},
+    	{
+          "id": "btn_text",
+          "type": "text",
+          "label": "Button text"
+    	}
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

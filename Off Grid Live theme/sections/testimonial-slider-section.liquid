@@ -1,0 +1,89 @@
+<div class="testimonial-section pad-top-btm-100">    
+<div class="container-fluid">
+          <div class="row">
+              <div class="col-md-12 ">
+                  <div class="testimonial-slider-block">
+                    <div class="text-center">
+                      <p>HAPPY CUSTOMERS</p>
+                      <h6>Google Reviews</h6>
+                    </div>
+                    
+                  <div class="testimonial-slider pad-50">
+                     <div> 
+                       <div class="banner-content">
+                         <img src="{{ '01-home-12.png' | asset_url }}"/>
+                         <img class="star-review" src="{{ 'star.png' | asset_url }}"/>
+                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
+                       <h3>John White </h3>
+                         <span>1day ago</span>
+
+                        </div>
+                       
+                    </div>
+                    <div>
+                       <div class="banner-content">
+                         <img src="{{ '01-home-12.png' | asset_url }}"/>
+                         <img class="star-review" src="{{ 'star.png' | asset_url }}"/>
+                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
+                       <h3>John White </h3>
+                         <span>1day ago</span>
+
+                        </div>
+                      
+                    </div>
+                    <div>
+                        <div class="banner-content">
+                         <img src="{{ '01-home-12.png' | asset_url }}"/>
+                          <img class="star-review" src="{{ 'star.png' | asset_url }}"/>
+                          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
+                       <h3>John White </h3>
+                         <span>1day ago</span>
+                         
+                         
+                        </div>
+                     
+                    </div>
+                  </div>
+              </div>
+          </div>
+		        
+              </div>
+      </div>
+  </div> 
+
+<script>
+	$("#scroll-down-btn").on('click', function() {
+    $('html, body').animate({
+        scrollTop: $("#featured-section").offset().top
+    }, 2000);
+});
+
+</script>
+
+<style>
+  .home-slick-slider{position:relative;}
+  #scroll-down-btn{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    /* right: 50%; */
+    margin: 0 auto;
+    /* display: inline-block; */
+    transform: translateX(-50%);
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Testimonial Section",
+  "settings": [
+    
+  ],
+  "presets": [
+    {
+      "name": "Testimonial Section",
+      "category": "testimonial"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,72 @@
+<div class="custom-fields-section">
+  
+    {% if resource_type == "collections" %}
+    <div class="custom-fields-section__collections">
+      {% for block in blocks %}
+      {% if block.type contains "cf_" %}
+      <div class="custom-fields-section__item custom-fields-section__item--{{ block.type }} custom-fields-section__item--{{ block.type }}--{{ block.settings.key }}" {{ block.shopify_attributes }}>
+        {% case block.settings.key %}
+        
+          {% when "custom_collection" %}
+            {% render "custom_fields.collections.custom_collection" %}
+        
+        {% endcase %}
+      </div>
+      {% endif %}
+      {% endfor %}
+    </div>
+    {% endif %}
+  
+    {% if resource_type == "products" %}
+    <div class="custom-fields-section__products">
+      {% for block in blocks %}
+      {% if block.type contains "cf_" %}
+      <div class="custom-fields-section__item custom-fields-section__item--{{ block.type }} custom-fields-section__item--{{ block.type }}--{{ block.settings.key }}" {{ block.shopify_attributes }}>
+        {% case block.settings.key %}
+        
+          {% when "featured_courses" %}
+            {% render "custom_fields.products.featured_courses" %}
+        
+          {% when "product_reference" %}
+            {% render "custom_fields.products.product_reference" %}
+        
+        {% endcase %}
+      </div>
+      {% endif %}
+      {% endfor %}
+    </div>
+    {% endif %}
+  
+    {% if resource_type == "shop" %}
+    <div class="custom-fields-section__shop">
+      {% for block in blocks %}
+      {% if block.type contains "cf_" %}
+      <div class="custom-fields-section__item custom-fields-section__item--{{ block.type }} custom-fields-section__item--{{ block.type }}--{{ block.settings.key }}" {{ block.shopify_attributes }}>
+        {% case block.settings.key %}
+        
+          {% when "featured_courses" %}
+            {% render "custom_fields.shop.featured_courses" %}
+        
+          {% when "home_tabs_widget" %}
+            {% render "custom_fields.shop.home_tabs_widget" %}
+        
+          {% when "our_products" %}
+            {% render "custom_fields.shop.our_products" %}
+        
+          {% when "product_reference" %}
+            {% render "custom_fields.shop.product_reference" %}
+        
+          {% when "shop_features_list" %}
+            {% render "custom_fields.shop.shop_features_list" %}
+        
+          {% when "what_you_need_menu" %}
+            {% render "custom_fields.shop.what_you_need_menu" %}
+        
+        {% endcase %}
+      </div>
+      {% endif %}
+      {% endfor %}
+    </div>
+    {% endif %}
+  
+</div>

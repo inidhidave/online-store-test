@@ -1,0 +1,53 @@
+<div class="services-icons">
+    <div class="container">
+        <ul class="services-items">
+          {% for block in section.blocks %}
+            <li>
+              <a href="{{ block.settings.icon_url }}"><img src="{{ block.settings.service_icon | img_url: 'master' }} "/>
+                <h3>{{ block.settings.service_heading  }} </h3></a>
+            </li>
+          {% endfor %}
+        </ul>
+    </div>
+</div>
+{% schema %}
+  {
+    "name": "Service icon Section",
+    "settings": [],
+	"blocks": [
+		{
+			"type": "icon",
+			"name": "Service Icon",
+			"settings": [
+				{
+					"type": "image_picker",
+					"id": "service_icon",
+					"label": "Client logo"
+				},
+				{
+					"type": "text",
+					"id": "service_heading",
+					"label": "Service Heading"
+				},
+				{
+					"type": "url",
+					"id": "icon_url",
+					"label": "Icon Url"
+				}
+			]
+		}
+	],
+	"presets": [
+		{
+			"name": "Our Service Section",
+			"category": "service"
+		}
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

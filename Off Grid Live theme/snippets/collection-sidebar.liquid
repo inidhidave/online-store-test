@@ -1,0 +1,64 @@
+<section class="clearfix collection-page-tabbing-bg">
+<div class="collection-page-tabbing">
+
+     {%comment%}
+
+     {% if shop.metafields.custom_fields["filterr_tags"] != blank %}
+{% assign collection_refs = shop.metafields.custom_fields["filterr_tags"] | split: "|"  %}
+  {% if shop.metafields.custom_fields["custom_class"] != blank %}
+<ul>
+ <li class=""><a href="/collections/products">All</a></li>
+{% for collection_handle in collection_refs %}
+     
+  <!--<li><a href="#">All</a></li>-->
+  {% assign collection_ref = collections[collection_handle] %}
+  
+  <li class="{{ item["custom_class"] }}">{{ collection_ref.title | link_to: collection_ref.url }}
+    {% comment %}
+    <a href="{{ collection_ref.title | link_to: collection_ref.url }}" class="{{ item["custom_class"] }}"><span>{{ collection.title}}</span></a>
+    <a href="{{ collection_ref.title | link_to: collection_ref.url }}" title="{{ collection.title}}"><span>{{ collection.title}}</span></a>
+  	{% endcomment %}
+  </li>
+  {% endfor %}
+  
+  </ul>
+{% endif %}
+  {% endif %}
+  {%endcomment%}
+  
+  {% if shop.metafields.custom_fields["collection_ref"] != blank %}
+ 
+      {% assign collection_refs = shop.metafields.custom_fields["collection_ref"] | split: "|" %}
+      <ul>
+        <li class="{% if collection.handle == 'products' or collection.handle == 'all' %}active{% endif %}"><a href="/collections/all">All</a></li>
+        {% for collection_handle in collection_refs %}
+        {% assign collection_ref = collections[collection_handle] %}        
+        {% assign collection_ref_handle = collection_ref.handle %}        
+          <li class="{% if collection.handle == collection_ref_handle %}active{% endif %}">
+            <a href="{{collection_ref.url}}" class="{% if forloop.index==1%}collection-courses-img{% elsif forloop.index==2%}collection-off-grid{% elsif forloop.index==3%}collection-grid-connect {% elsif forloop.index==4%}collection-inverters {% elsif forloop.index==5%}collection-batteries {% elsif forloop.index==6%}collection-acessories{%endif%}">
+              <span>{{ collection_ref.title }}</span>
+             </a>
+          </li>
+        {% endfor %}
+      </ul>
+{% endif %}
+  
+  <div class="filters-toolbar__item-child filter-custom">
+    <label class="filters-toolbar__label select-label" for="FilterTags">Category</label>
+      <div class="filters-toolbar__input-wrapper select-group">
+        {%- assign sort = collection.sort_by | default: collection.default_sort_by -%}
+          <select class="filters-toolbar__input hidden" name="FilterTags" id="categoryFilter" id="SortBy" aria-describedby="a11y-refresh-page-message a11y-selection-message" data-select-input>
+             <option value="/collections/all"
+                     {% if collection.handle == 'products' or collection.handle == 'all' %} selected="selected"{% endif %}>All</option>
+            {% for collection_handle in collection_refs %}
+              {% assign collection_ref = collections[collection_handle] %}        
+        {% assign collection_ref_handle = collection_ref.handle %}    
+             <option value="{{ collection_ref.url }}" {% if collection.handle == collection_ref_handle %} selected="selected"{% endif %}>{{ collection_ref.title }}</option>
+            {% endfor %}
+          </select>
+         {% include 'icon-chevron-down' %}
+      </div>
+   </div>
+  
+  </div>
+</section>

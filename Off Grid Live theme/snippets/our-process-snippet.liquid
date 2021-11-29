@@ -1,0 +1,62 @@
+{% if shop.metafields.custom_fields["our_process_tabs_widget"] != blank %}
+{% assign data_attr = shop.metafields._cf_shop["our_process_tabs_widget"].data_attr %}
+                      
+                      <div class="our-process-listing">
+                         <h3>{{tab_title}}</h3>
+                          <p>{{tab_para}}</p>
+                        <ul>
+                          {% for item in shop.metafields.custom_fields["our_process_tabs_widget"] %}
+                          <li class="w-our-process">
+                            {% if item.image != blank %}
+                          {% render "cf-image" with image: item.image, crop: "center", size: "380x380" %}
+                            {% endif %}
+                            <div class="content-process">
+                            <span>{{ forloop.index }}</span>
+                            <p>{{ item.title }}</p>
+                             </div>
+                          </li>
+                          {% endfor %}
+<!--                             <li class="w-our-process">
+                          <img src="//cdn.shopify.com/s/files/1/0039/1567/7745/t/3/assets/bundle.png?v=3243184959886032398">
+                            <div class="content-process">
+                            <span>2</span>
+                            <p>Choose Your<br>Bundle / Product</p>
+                             </div>
+                          </li>
+                             <li class="w-our-process">
+                          <img src="//cdn.shopify.com/s/files/1/0039/1567/7745/t/3/assets/66-icon.svg">
+                            <div class="content-process">
+                            <span>3</span>
+                            <p>Shipping &amp;<br> Delivery</p>
+                             </div>
+                          </li>
+                             <li class="w-our-process">
+                          <img src="//cdn.shopify.com/s/files/1/0039/1567/7745/t/3/assets/67-icon.svg">
+                            <div class="content-process">
+                            <span>4</span>
+                            <p>Easy <br>Instalation </p>
+                             </div>
+                          </li>
+                            <li class="w-our-process">
+                          <img src="//cdn.shopify.com/s/files/1/0039/1567/7745/t/3/assets/68-icon.svg">
+                            <div class="content-process">
+                            <span>5</span>
+                            <p>Free &amp;<br>Clean Energy</p>
+                             </div>
+                          </li> -->
+                        </ul>
+                      
+                      </div>
+{% if tab_button_link != blank %}
+                                                          <div class="btn-area">
+            <a class="secondary-btn" href="{{tab_button_link}}">{{tab_button}}</a>
+          </div>
+                          {%endif%}
+                    {% endif %}
+
+<style>
+  .what-you-need-section .our-process-block-tab .our-process-listing ul li img{
+    object-fit: contain;
+    object-position: center;
+  }
+</style>

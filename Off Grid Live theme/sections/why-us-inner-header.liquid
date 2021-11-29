@@ -1,0 +1,30 @@
+<div class="page-banner">
+<!--   	<img src="{{ section.settings.banner_img | img_url: 'master' }}"/> -->
+  <div class="banner-class" style="background-image:url({{ section.settings.banner_img | img_url: 'master' }});"></div>
+	<div class="inner-content">
+      <ul class="breadcrumbs">
+        {% render 'breadcrumbs' %}
+      </ul>
+      <h1 class="page-title">{{ page_title }}</h1>
+  	</div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Why us Header Section",
+    "settings": [
+	  {
+		"type": "image_picker",
+		"id": "banner_img",
+		"label": "Banner Image"
+	  }
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
